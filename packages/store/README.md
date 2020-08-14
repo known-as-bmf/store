@@ -1,3 +1,5 @@
+# @known-as-bmf/store
+
 Lightweight synchronous state management library.
 
 <!-- [![Build Status](https://travis-ci.org/known-as-bmf/store.svg?branch=master)](https://travis-ci.org/known-as-bmf/store)

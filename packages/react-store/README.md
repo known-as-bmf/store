@@ -1,3 +1,5 @@
+# @known-as-bmf/react-store
+
 React hook to subscribe to a store from `@known-as-bmf/store`.
 
 <!-- [![Build Status](https://travis-ci.org/known-as-bmf/react-store.svg?branch=master)](https://travis-ci.org/known-as-bmf/react-store)
