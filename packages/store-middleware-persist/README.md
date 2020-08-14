@@ -9,7 +9,7 @@
 
 ## Description
 
-Middleware to be used with `@known-as-bmf/store`. Allows you to persist state to the browser storage.
+Middleware to be used with [`@known-as-bmf/store`](https://github.com/known-as-bmf/store/tree/master/packages/store). Allows you to persist state to the browser storage.
 
 ## Usage
 

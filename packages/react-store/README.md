@@ -1,6 +1,6 @@
 # @known-as-bmf/react-store
 
-React hook to subscribe to a store from `@known-as-bmf/store`.
+React hook to subscribe to a store from [`@known-as-bmf/store`](https://github.com/known-as-bmf/store/tree/master/packages/store).
 
 <!-- [![Build Status](https://travis-ci.org/known-as-bmf/react-store.svg?branch=master)](https://travis-ci.org/known-as-bmf/react-store)
 [![Known Vulnerabilities](https://snyk.io/test/github/known-as-bmf/react-store/badge.svg?targetFile=package.json)](https://snyk.io/test/github/known-as-bmf/react-store?targetFile=package.json) -->
@@ -13,7 +13,7 @@ You also need react (>= 16.8) installed in your project.
 
 ## Description
 
-This library provides a react hook to subscribe to a store from [`@known-as-bmf/store`](https://github.com/known-as-bmf/store).
+This library provides a react hook to subscribe to a store from [`@known-as-bmf/store`](https://github.com/known-as-bmf/store/tree/master/packages/store).
 
 ## Usage
 

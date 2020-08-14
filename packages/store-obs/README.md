@@ -9,7 +9,7 @@
 
 ## Description
 
-Create an observable emiting state changes.
+Create an observable emiting state changes from [`@known-as-bmf/store`](https://github.com/known-as-bmf/store/tree/master/packages/store).
 
 ## API
 
