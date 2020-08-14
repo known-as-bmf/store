@@ -1,0 +1,53 @@
+{
+  "name": "@known-as-bmf/store-obs",
+  "version": "3.0.0",
+  "author": "Julien Avert",
+  "description": "Utility to create an Observable emiting when a @known-as-bmf/store instance changes.",
+  "keywords": [
+    "javascript",
+    "typescript",
+    "state",
+    "state management",
+    "store",
+    "atom",
+    "rxjs",
+    "observable"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/known-as-bmf/store.git"
+  },
+  "homepage": "https://github.com/known-as-bmf/store/tree/master/packages/store-obs",
+  "bugs": "https://github.com/known-as-bmf/store/issues",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/store-obs.esm.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "start": "",
+    "build": "toolchain build",
+    "test": "toolchain test",
+    "test:coverage": "toolchain test --coverage",
+    "lint": "toolchain lint"
+  },
+  "devDependencies": {
+    "toolchain": "workspace:*",
+    "eslint-config-bmf": "workspace:*",
+    "@known-as-bmf/store": "workspace:^3",
+    "@types/jest": "26.0.9",
+    "eslint": "7.6.0",
+    "rxjs": "^6",
+    "tslib": "2.0.1",
+    "typescript": "3.9.7"
+  },
+  "peerDependencies": {
+    "rxjs": "^6",
+    "@known-as-bmf/store": "workspace:^3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

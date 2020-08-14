@@ -1,0 +1,51 @@
+{
+  "name": "@known-as-bmf/store-middleware-validate",
+  "version": "3.0.0",
+  "author": "Julien Avert",
+  "description": "Validation middleware for @known-as-bmf/store.",
+  "keywords": [
+    "javascript",
+    "typescript",
+    "state",
+    "state management",
+    "store",
+    "atom",
+    "middleware",
+    "validation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/known-as-bmf/store.git"
+  },
+  "homepage": "https://github.com/known-as-bmf/store/tree/master/packages/store-middleware-validate",
+  "bugs": "https://github.com/known-as-bmf/store/issues",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/store-middleware-validate.esm.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "start": "",
+    "build": "toolchain build",
+    "test": "toolchain test",
+    "test:coverage": "toolchain test --coverage",
+    "lint": "toolchain lint"
+  },
+  "devDependencies": {
+    "toolchain": "workspace:*",
+    "eslint-config-bmf": "workspace:*",
+    "@known-as-bmf/store": "workspace:^3",
+    "@types/jest": "26.0.9",
+    "eslint": "7.6.0",
+    "tslib": "2.0.1",
+    "typescript": "3.9.7"
+  },
+  "peerDependencies": {
+    "@known-as-bmf/store": "workspace:^3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

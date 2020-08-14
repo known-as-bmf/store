@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`derefHistory should return an object with 3 keys (future, past, current) 1`] = `
+Object {
+  "current": 2,
+  "future": Array [
+    3,
+  ],
+  "past": Array [
+    1,
+  ],
+}
+`;
+
+exports[`derefHistory should throw if not given a store 1`] = `"Provided value is not a valid store instance or has not been initialized with timetravel middleware."`;
+
+exports[`derefHistory should throw if not given a store 2`] = `"Provided value is not a valid store instance or has not been initialized with timetravel middleware."`;
+
+exports[`of should properly initialize the history 1`] = `
+Object {
+  "current": "a",
+  "future": Array [],
+  "past": Array [],
+}
+`;
+
+exports[`of should throw error if options are invalid 1`] = `"historyDepth must be greater than 0, got -2"`;
+
+exports[`of should throw error if options are invalid 2`] = `"historyDepth must be greater than 0, got -1"`;
+
+exports[`of should throw error if options are invalid 3`] = `"historyDepth must be greater than 0, got 0"`;
+
+exports[`of should throw error if options are invalid 4`] = `"historyDepth must be greater than 0, got 0"`;
+
+exports[`of should throw error if options are invalid 5`] = `"historyDepth must be greater than 0, got 0"`;
+
+exports[`redo should throw if given a negative step value 1`] = `"steps must be greater than or equal to 0, got -2"`;
+
+exports[`redo should throw if not given a store 1`] = `"Provided value is not a valid store instance or has not been initialized with timetravel middleware."`;
+
+exports[`redo should throw if not given a store 2`] = `"Provided value is not a valid store instance or has not been initialized with timetravel middleware."`;
+
+exports[`redo should throw if trying to go forward when there is no future 1`] = `"Not enough states in history stack to go forward."`;
+
+exports[`set should properly update the history 1`] = `
+Object {
+  "current": "b",
+  "future": Array [],
+  "past": Array [
+    "a",
+  ],
+}
+`;
+
+exports[`swap should properly update the history 1`] = `
+Object {
+  "current": "b",
+  "future": Array [],
+  "past": Array [
+    "a",
+  ],
+}
+`;
+
+exports[`undo should throw if given a negative step value 1`] = `"steps must be greater than or equal to 0, got -2"`;
+
+exports[`undo should throw if not given a store 1`] = `"Provided value is not a valid store instance or has not been initialized with timetravel middleware."`;
+
+exports[`undo should throw if not given a store 2`] = `"Provided value is not a valid store instance or has not been initialized with timetravel middleware."`;
+
+exports[`undo should throw if trying to go backward when there is no past 1`] = `"Not enough states in history stack to go backward."`;

@@ -1,0 +1,4 @@
+{
+  "prettier.configPath": ".prettierrc.js",
+  "prettier.prettierPath": "common\\autoinstallers\\rush-prettier\\node_modules\\prettier"
+}

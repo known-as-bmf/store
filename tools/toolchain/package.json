@@ -1,0 +1,19 @@
+{
+  "name": "toolchain",
+  "version": "0.0.0",
+  "author": "Julien Avert",
+  "private": true,
+  "scripts": {
+    "start": "",
+    "build": "",
+    "test": ""
+  },
+  "devDependencies": {
+    "@types/jest": "26.0.9",
+    "tsdx": "0.13.2",
+    "typescript": "3.9.7"
+  },
+  "bin": {
+    "toolchain": "./node_modules/tsdx/dist/index.js"
+  }
+}

@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`obs should error when subscribing if not given a store 1`] = `[TypeError: Provided value is not a valid store instance.]`;
+
+exports[`obs should error when subscribing if not given a store 2`] = `[TypeError: Provided value is not a valid store instance.]`;

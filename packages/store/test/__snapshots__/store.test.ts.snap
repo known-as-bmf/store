@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`deref should throw if not given a store 1`] = `"Provided value is not a valid store instance."`;
+
+exports[`deref should throw if not given a store 2`] = `"Provided value is not a valid store instance."`;
+
+exports[`set should throw if not given a store 1`] = `"Provided value is not a valid store instance."`;
+
+exports[`set should throw if not given a store 2`] = `"Provided value is not a valid store instance."`;
+
+exports[`subscribe should throw if not given a store 1`] = `"Provided value is not a valid store instance."`;
+
+exports[`subscribe should throw if not given a store 2`] = `"Provided value is not a valid store instance."`;
+
+exports[`swap should throw if not given a store 1`] = `"Provided value is not a valid store instance."`;
+
+exports[`swap should throw if not given a store 2`] = `"Provided value is not a valid store instance."`;

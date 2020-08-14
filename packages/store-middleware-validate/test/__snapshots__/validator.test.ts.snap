@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`of should throw error if initial state is invalid 1`] = `
+"Validation failed for state:
+
+{
+ \\"test\\": 10
+}
+
+Failed validator:
+
+function (s) { return s.test < 5; }"
+`;
+
+exports[`set should throw error if new state is invalid 1`] = `
+"Validation failed for state:
+
+{
+ \\"test\\": 10
+}
+
+Failed validator:
+
+function (s) { return s.test < 5; }"
+`;
+
+exports[`swap should throw error if new state is invalid 1`] = `
+"Validation failed for state:
+
+{
+ \\"test\\": 10
+}
+
+Failed validator:
+
+function (s) { return s.test < 5; }"
+`;
