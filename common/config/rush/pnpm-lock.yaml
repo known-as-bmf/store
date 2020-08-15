@@ -43,8 +43,8 @@ importers:
       '@types/testing-library__react-hooks': 3.4.0
       eslint: 7.7.0
       eslint-config-bmf: 'workspace:*'
-      react: ^16.8
-      react-dom: ^16.8
+      react: ^16.8.0
+      react-dom: ^16.8.0
       react-test-renderer: 16.13.1
       toolchain: 'workspace:*'
       tslib: 2.0.1
@@ -135,7 +135,7 @@ importers:
       '@types/jest': 26.0.10
       eslint: 7.7.0
       eslint-config-bmf: 'workspace:*'
-      rxjs: ^6
+      rxjs: ^6.6.0
       toolchain: 'workspace:*'
       tslib: 2.0.1
       typescript: 3.9.7
@@ -459,8 +459,8 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-fCL7QF0Jo83uy1K0P2YXrfX11tj3lkpN7l4dMv9Y9VkowkhkQDwFHFd8IiwyK5MZjE8UpbgokkgtcReH88Abaw==
-  ? /@babel/plugin-proposal-logical-assignment-operators/7.11.0_@babel+core@7.11.1
-  : dependencies:
+  /@babel/plugin-proposal-logical-assignment-operators/7.11.0_@babel+core@7.11.1:
+    dependencies:
       '@babel/core': 7.11.1
       '@babel/helper-plugin-utils': 7.10.4
       '@babel/plugin-syntax-logical-assignment-operators': 7.10.4_@babel+core@7.11.1
@@ -834,8 +834,8 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-mohW5q3uAEt8T45YT7Qc5ws6mWgJAaL/8BfWD9Dodo1A3RKWli8wTS+WiQ/knF+tXlPirW/1/MqzzGfCExKECA==
-  ? /@babel/plugin-transform-named-capturing-groups-regex/7.10.4_@babel+core@7.11.1
-  : dependencies:
+  /@babel/plugin-transform-named-capturing-groups-regex/7.10.4_@babel+core@7.11.1:
+    dependencies:
       '@babel/core': 7.11.1
       '@babel/helper-create-regexp-features-plugin': 7.10.4_@babel+core@7.11.1
     dev: true
@@ -7103,4 +7103,3 @@ packages:
     dev: true
     resolution:
       integrity: sha512-AX3Zw5iPruN5ie6xGRIDgqkT+ZhnRlZMLMHAs8tg7nRruy2Nb+i5o9bwghAogtM08q1dpr2LVoS8KSTMYpWXUw==
-registry: ''
