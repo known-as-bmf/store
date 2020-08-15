@@ -31,7 +31,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: node common/scripts/install-run-rush.js install
+      - run: node common/scripts/install-run-rush.js install --debug-package-manager
       - run: node common/scripts/install-run-rush.js check
       - run: node common/scripts/install-run-rush.js test:coverage --verbose
 
@@ -55,6 +55,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: node common/scripts/install-run-rush.js install
+      - run: node common/scripts/install-run-rush.js install --debug-package-manager
       - run: node common/scripts/install-run-rush.js check
       - run: node common/scripts/install-run-rush.js rebuild --verbose
