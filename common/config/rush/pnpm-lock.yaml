@@ -153,10 +153,12 @@ importers:
   ../../tools/toolchain:
     devDependencies:
       '@types/jest': 26.0.10
+      jest-standard-reporter: 1.1.0
       tsdx: 0.13.2
       typescript: 3.9.7
     specifiers:
       '@types/jest': 26.0.10
+      jest-standard-reporter: 1.1.0
       tsdx: 0.13.2
       typescript: 3.9.7
 lockfileVersion: 5.1
@@ -457,8 +459,8 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-fCL7QF0Jo83uy1K0P2YXrfX11tj3lkpN7l4dMv9Y9VkowkhkQDwFHFd8IiwyK5MZjE8UpbgokkgtcReH88Abaw==
-  /@babel/plugin-proposal-logical-assignment-operators/7.11.0_@babel+core@7.11.1:
-    dependencies:
+  ? /@babel/plugin-proposal-logical-assignment-operators/7.11.0_@babel+core@7.11.1
+  : dependencies:
       '@babel/core': 7.11.1
       '@babel/helper-plugin-utils': 7.10.4
       '@babel/plugin-syntax-logical-assignment-operators': 7.10.4_@babel+core@7.11.1
@@ -832,8 +834,8 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-mohW5q3uAEt8T45YT7Qc5ws6mWgJAaL/8BfWD9Dodo1A3RKWli8wTS+WiQ/knF+tXlPirW/1/MqzzGfCExKECA==
-  /@babel/plugin-transform-named-capturing-groups-regex/7.10.4_@babel+core@7.11.1:
-    dependencies:
+  ? /@babel/plugin-transform-named-capturing-groups-regex/7.10.4_@babel+core@7.11.1
+  : dependencies:
       '@babel/core': 7.11.1
       '@babel/helper-create-regexp-features-plugin': 7.10.4_@babel+core@7.11.1
     dev: true
@@ -3770,6 +3772,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-Sb1jMdfQLQwJvJEKEHW6gWW1bfk=
+  /inherits/2.0.3:
+    dev: true
+    resolution:
+      integrity: sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
   /inherits/2.0.4:
     dev: true
     resolution:
@@ -4439,6 +4445,16 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-uI/rszGSs73xCM0l+up7O7a40o90cnrk429LOiK3aeTvfC0HHmldbd81/B7Ix81KSFe1lwkbl7GnBGG4UfuDew==
+  /jest-standard-reporter/1.1.0:
+    dependencies:
+      chalk: 3.0.0
+      jest-util: 25.5.0
+      path: 0.12.7
+      slash: 3.0.0
+      string-length: 3.1.0
+    dev: true
+    resolution:
+      integrity: sha512-LanBY+Jv++pVp2z5S65EEKJBno6Qpv5bIDUesEEIdEhFRtE1O8X1bhJ4moj3CP0BGGcQoeBmrEK3L2r4LaefXw==
   /jest-util/24.9.0:
     dependencies:
       '@jest/console': 24.9.0
@@ -4458,6 +4474,18 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-x+cZU8VRmOJxbA1K5oDBdxQmdq0OIdADarLxk0Mq+3XS4jgvhG/oKGWcIDCtPG0HgjxOYvF+ilPJQsAyXfbNOg==
+  /jest-util/25.5.0:
+    dependencies:
+      '@jest/types': 25.5.0
+      chalk: 3.0.0
+      graceful-fs: 4.2.4
+      is-ci: 2.0.0
+      make-dir: 3.1.0
+    dev: true
+    engines:
+      node: '>= 8.3'
+    resolution:
+      integrity: sha512-KVlX+WWg1zUTB9ktvhsg2PXZVdkI1NBevOJSkTKYAyXyH4QSvh+Lay/e/v+bmaFfrkfx43xD8QTfgobzlEXdIA==
   /jest-validate/24.9.0:
     dependencies:
       '@jest/types': 24.9.0
@@ -5418,6 +5446,13 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
+  /path/0.12.7:
+    dependencies:
+      process: 0.11.10
+      util: 0.10.4
+    dev: true
+    resolution:
+      integrity: sha1-1NwqUGxM4hl+tIHr/NWzbAFAsQ8=
   /performance-now/2.1.0:
     dev: true
     resolution:
@@ -5537,6 +5572,12 @@ packages:
       node: '>= 8.3'
     resolution:
       integrity: sha512-kbo/kq2LQ/A/is0PQwsEHM7Ca6//bGPPvU6UnsdDRSKTWxT/ru/xb88v4BJf6a69H+uTytOEsTusT9ksd/1iWQ==
+  /process/0.11.10:
+    dev: true
+    engines:
+      node: '>= 0.6.0'
+    resolution:
+      integrity: sha1-czIwDoQBYb2j5podHZGn1LwW8YI=
   /progress-estimator/0.2.2:
     dependencies:
       chalk: 2.4.2
@@ -6869,6 +6910,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-g9JpC/3He3bm38zsLupWryXHoEcS22YHthuPQSJdMy6KNrzIRzWqcsHzD/WUnqe45whVou4VIsPew37DoXWNrA==
+  /util/0.10.4:
+    dependencies:
+      inherits: 2.0.3
+    dev: true
+    resolution:
+      integrity: sha512-0Pm9hTQ3se5ll1XihRic3FDIku70C+iHUdT/W926rSgHV5QgXsYbKZN8MSC3tJtSkhuROzvsQjAaFENRXr+19A==
   /uuid/3.4.0:
     dev: true
     hasBin: true
@@ -7056,3 +7103,4 @@ packages:
     dev: true
     resolution:
       integrity: sha512-AX3Zw5iPruN5ie6xGRIDgqkT+ZhnRlZMLMHAs8tg7nRruy2Nb+i5o9bwghAogtM08q1dpr2LVoS8KSTMYpWXUw==
+registry: ''
