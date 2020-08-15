@@ -24,10 +24,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      # - uses: actions/cache@v2
-      #   with:
-      #     path: common/temp/pnpm-store
-      #     key: ${{ runner.os }}-pnpm-store
+      - uses: actions/cache@v2
+        with:
+          path: common/temp/pnpm-store
+          key: ${{ runner.os }}-${{ matrix.node-version }}-pnpm-store
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
