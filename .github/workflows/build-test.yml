@@ -5,15 +5,15 @@ name: Build & Test
 
 on:
   push:
-    branches: [ develop, feature/* ]
+    branches: [develop, feature/*]
   pull_request:
-    branches: [ develop ]
+    branches: [develop]
   workflow_dispatch:
 
 jobs:
   test:
     name: Test on node ${{ matrix.node-version }} and ${{ matrix.os }}
-    
+
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -22,21 +22,22 @@ jobs:
         node-version: [12.x, 14.x]
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/cache@v2
-      with:
-        path: common/temp/pnpm-store
-        key: ${{ runner.os }}-pnpm-store
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: node common/scripts/install-run-rush.js install
-    - run: node common/scripts/install-run-rush.js test:coverage --verbose
+      - uses: actions/checkout@v2
+      # - uses: actions/cache@v2
+      #   with:
+      #     path: common/temp/pnpm-store
+      #     key: ${{ runner.os }}-pnpm-store
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: node common/scripts/install-run-rush.js install --no-link
+      - run: node common/scripts/install-run-rush.js link
+      - run: node common/scripts/install-run-rush.js test:coverage --verbose
 
   build:
     name: Build on node ${{ matrix.node-version }} and ${{ matrix.os }}
-    
+
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -45,14 +46,15 @@ jobs:
         node-version: [12.x, 14.x]
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/cache@v2
-      with:
-        path: common/temp/pnpm-store
-        key: ${{ runner.os }}-pnpm-store
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: node common/scripts/install-run-rush.js install
-    - run: node common/scripts/install-run-rush.js rebuild --verbose
+      - uses: actions/checkout@v2
+      # - uses: actions/cache@v2
+      #   with:
+      #     path: common/temp/pnpm-store
+      #     key: ${{ runner.os }}-pnpm-store
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: node common/scripts/install-run-rush.js install --no-link
+      - run: node common/scripts/install-run-rush.js link
+      - run: node common/scripts/install-run-rush.js rebuild --verbose
