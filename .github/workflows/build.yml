@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Build & Test
+name: Build
 
 on:
   push:
@@ -11,30 +11,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
-    name: Test on node ${{ matrix.node-version }} and ${{ matrix.os }}
-
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [windows-latest, ubuntu-latest]
-        node-version: [12.x, 14.x]
-
-    steps:
-      - uses: actions/checkout@v2
-      # - uses: actions/cache@v2
-      #   with:
-      #     path: common/temp/pnpm-store
-      #     key: ${{ runner.os }}-pnpm-store
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: node common/scripts/install-run-rush.js install --debug-package-manager
-      - run: node common/scripts/install-run-rush.js check
-      - run: node common/scripts/install-run-rush.js test:coverage --verbose
-
   build:
     name: Build on node ${{ matrix.node-version }} and ${{ matrix.os }}
 
@@ -55,6 +31,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: node common/scripts/install-run-rush.js install --debug-package-manager
+      - run: node common/scripts/install-run-rush.js install
       - run: node common/scripts/install-run-rush.js check
       - run: node common/scripts/install-run-rush.js rebuild --verbose
