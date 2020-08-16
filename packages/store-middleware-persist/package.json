@@ -35,16 +35,16 @@
     "lint": "toolchain lint"
   },
   "devDependencies": {
-    "toolchain": "workspace:*",
-    "eslint-config-bmf": "workspace:*",
-    "@known-as-bmf/store": "workspace:^3",
+    "@known-as-bmf/store": "workspace:^3.0.0",
     "@types/jest": "26.0.10",
     "eslint": "7.7.0",
+    "eslint-config-bmf": "workspace:*",
+    "toolchain": "workspace:*",
     "tslib": "2.0.1",
     "typescript": "3.9.7"
   },
   "peerDependencies": {
-    "@known-as-bmf/store": "workspace:^3"
+    "@known-as-bmf/store": "workspace:^3.0.0"
   },
   "publishConfig": {
     "access": "public"

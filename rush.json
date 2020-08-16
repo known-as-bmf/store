@@ -434,31 +434,38 @@
     // }
     {
       "packageName": "@known-as-bmf/hookable",
-      "projectFolder": "packages/hookable"
+      "projectFolder": "packages/hookable",
+      "shouldPublish": true
     },
     {
       "packageName": "@known-as-bmf/store",
-      "projectFolder": "packages/store"
+      "projectFolder": "packages/store",
+      "shouldPublish": true
     },
     {
       "packageName": "@known-as-bmf/store-obs",
-      "projectFolder": "packages/store-obs"
+      "projectFolder": "packages/store-obs",
+      "shouldPublish": true
     },
     {
       "packageName": "@known-as-bmf/react-store",
-      "projectFolder": "packages/react-store"
+      "projectFolder": "packages/react-store",
+      "shouldPublish": true
     },
     {
       "packageName": "@known-as-bmf/store-middleware-persist",
-      "projectFolder": "packages/store-middleware-persist"
+      "projectFolder": "packages/store-middleware-persist",
+      "shouldPublish": true
     },
     {
       "packageName": "@known-as-bmf/store-middleware-timetravel",
-      "projectFolder": "packages/store-middleware-timetravel"
+      "projectFolder": "packages/store-middleware-timetravel",
+      "shouldPublish": true
     },
     {
       "packageName": "@known-as-bmf/store-middleware-validate",
-      "projectFolder": "packages/store-middleware-validate"
+      "projectFolder": "packages/store-middleware-validate",
+      "shouldPublish": true
     },
     {
       "packageName": "toolchain",
