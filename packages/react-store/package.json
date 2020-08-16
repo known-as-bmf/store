@@ -39,20 +39,20 @@
     "@known-as-bmf/store": "workspace:^3",
     "@testing-library/react-hooks": "3.4.1",
     "@testing-library/react": "10.4.8",
-    "@types/jest": "26.0.9",
+    "@types/jest": "26.0.10",
     "@types/react-dom": "16.9.8",
     "@types/react": "16.9.46",
     "@types/testing-library__react-hooks": "3.4.0",
-    "eslint": "7.6.0",
-    "react-dom": "^16.8",
+    "eslint": "7.7.0",
+    "react-dom": "^16.8.0",
     "react-test-renderer": "16.13.1",
-    "react": "^16.8",
+    "react": "^16.8.0",
     "tslib": "2.0.1",
     "typescript": "3.9.7"
   },
   "peerDependencies": {
     "@known-as-bmf/store": "workspace:^3",
-    "react": "^16.8"
+    "react": "^16.8.0"
   },
   "publishConfig": {
     "access": "public"

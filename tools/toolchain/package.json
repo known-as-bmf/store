@@ -9,7 +9,8 @@
     "test": ""
   },
   "devDependencies": {
-    "@types/jest": "26.0.9",
+    "@types/jest": "26.0.10",
+    "jest-standard-reporter": "1.1.0",
     "tsdx": "0.13.2",
     "typescript": "3.9.7"
   },

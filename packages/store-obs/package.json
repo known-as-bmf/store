@@ -37,14 +37,14 @@
     "toolchain": "workspace:*",
     "eslint-config-bmf": "workspace:*",
     "@known-as-bmf/store": "workspace:^3",
-    "@types/jest": "26.0.9",
-    "eslint": "7.6.0",
-    "rxjs": "^6",
+    "@types/jest": "26.0.10",
+    "eslint": "7.7.0",
+    "rxjs": "^6.6.0",
     "tslib": "2.0.1",
     "typescript": "3.9.7"
   },
   "peerDependencies": {
-    "rxjs": "^6",
+    "rxjs": "^6.6.0",
     "@known-as-bmf/store": "workspace:^3"
   },
   "publishConfig": {

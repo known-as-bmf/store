@@ -39,8 +39,8 @@
     "toolchain": "workspace:*",
     "eslint-config-bmf": "workspace:*",
     "@known-as-bmf/store": "workspace:^3",
-    "@types/jest": "26.0.9",
-    "eslint": "7.6.0",
+    "@types/jest": "26.0.10",
+    "eslint": "7.7.0",
     "tslib": "2.0.1",
     "typescript": "3.9.7"
   },
