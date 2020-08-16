@@ -6,6 +6,8 @@ yarn-error.log*
 
 *.ignore
 
+.vscode/launch.json
+
 # Runtime data
 *.pid
 *.seed
