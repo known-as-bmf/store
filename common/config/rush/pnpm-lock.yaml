@@ -6,6 +6,7 @@ importers:
       '@types/jest': 26.0.10
       eslint: 7.7.0
       eslint-config-bmf: 'link:../../tools/eslint-config-bmf'
+      jest-extended: 0.11.5
       toolchain: 'link:../../tools/toolchain'
       tslib: 2.0.1
       typescript: 3.9.7
@@ -13,6 +14,7 @@ importers:
       '@types/jest': 26.0.10
       eslint: 7.7.0
       eslint-config-bmf: 'workspace:*'
+      jest-extended: 0.11.5
       toolchain: 'workspace:*'
       tslib: 2.0.1
       typescript: 3.9.7
@@ -34,7 +36,7 @@ importers:
       tslib: 2.0.1
       typescript: 3.9.7
     specifiers:
-      '@known-as-bmf/store': 'workspace:^3'
+      '@known-as-bmf/store': 'workspace:^3.0.0'
       '@testing-library/react': 10.4.8
       '@testing-library/react-hooks': 3.4.1
       '@types/jest': 26.0.10
@@ -61,7 +63,7 @@ importers:
       tslib: 2.0.1
       typescript: 3.9.7
     specifiers:
-      '@known-as-bmf/hookable': 'workspace:^3'
+      '@known-as-bmf/hookable': 'workspace:^3.0.0'
       '@types/jest': 26.0.10
       eslint: 7.7.0
       eslint-config-bmf: 'workspace:*'
@@ -79,7 +81,7 @@ importers:
       tslib: 2.0.1
       typescript: 3.9.7
     specifiers:
-      '@known-as-bmf/store': 'workspace:^3'
+      '@known-as-bmf/store': 'workspace:^3.0.0'
       '@types/jest': 26.0.10
       eslint: 7.7.0
       eslint-config-bmf: 'workspace:*'
@@ -96,7 +98,7 @@ importers:
       tslib: 2.0.1
       typescript: 3.9.7
     specifiers:
-      '@known-as-bmf/store': 'workspace:^3'
+      '@known-as-bmf/store': 'workspace:^3.0.0'
       '@types/jest': 26.0.10
       eslint: 7.7.0
       eslint-config-bmf: 'workspace:*'
@@ -113,7 +115,7 @@ importers:
       tslib: 2.0.1
       typescript: 3.9.7
     specifiers:
-      '@known-as-bmf/store': 'workspace:^3'
+      '@known-as-bmf/store': 'workspace:^3.0.0'
       '@types/jest': 26.0.10
       eslint: 7.7.0
       eslint-config-bmf: 'workspace:*'
@@ -131,7 +133,7 @@ importers:
       tslib: 2.0.1
       typescript: 3.9.7
     specifiers:
-      '@known-as-bmf/store': 'workspace:^3'
+      '@known-as-bmf/store': 'workspace:^3.0.0'
       '@types/jest': 26.0.10
       eslint: 7.7.0
       eslint-config-bmf: 'workspace:*'
@@ -141,14 +143,14 @@ importers:
       typescript: 3.9.7
   ../../tools/eslint-config-bmf:
     devDependencies:
-      '@rushstack/eslint-config': 1.0.4_eslint@7.7.0+typescript@3.9.7
+      '@rushstack/eslint-config': 1.1.0_eslint@7.7.0+typescript@3.9.7
       eslint: 7.7.0
-      eslint-plugin-react-hooks: 4.0.8_eslint@7.7.0
+      eslint-plugin-react-hooks: 4.1.0_eslint@7.7.0
       typescript: 3.9.7
     specifiers:
-      '@rushstack/eslint-config': 1.0.4
+      '@rushstack/eslint-config': 1.1.0
       eslint: 7.7.0
-      eslint-plugin-react-hooks: 4.0.8
+      eslint-plugin-react-hooks: 4.1.0
       typescript: 3.9.7
   ../../tools/toolchain:
     devDependencies:
@@ -1373,7 +1375,7 @@ packages:
       rollup: ^1.20.0||^2.0.0
     resolution:
       integrity: sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==
-  /@rushstack/eslint-config/1.0.4_eslint@7.7.0+typescript@3.9.7:
+  /@rushstack/eslint-config/1.1.0_eslint@7.7.0+typescript@3.9.7:
     dependencies:
       '@rushstack/eslint-patch': 1.0.3
       '@rushstack/eslint-plugin': 0.4.2_eslint@7.7.0
@@ -1392,7 +1394,7 @@ packages:
       eslint: ^6.0.0 || ^7.0.0
       typescript: '>=3.0.0'
     resolution:
-      integrity: sha512-e+LWYBj9JpKRXRQpowQWhlYnIP86QxW0Q5XuxderuquPF0pHIsRXQWjxsHBJNmFePM3pL9fjZWY972C7LW6C4w==
+      integrity: sha512-GR/RUn4uVRM2bu/hlhMhxHcU5v0kzUirzy4qhK6b/BpwvqA18Dw8O6rRyUF31Jub3hEAZQqRIOu8N/u9irgQdw==
   /@rushstack/eslint-patch/1.0.3:
     dev: true
     resolution:
@@ -1530,10 +1532,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
-  /@types/node/14.0.27:
+  /@types/node/14.6.0:
     dev: true
     resolution:
-      integrity: sha512-kVrqXhbclHNHGu9ztnAwSncIgJv/FaxmzXJvGXNdcCpV1b8u1/Mi6z6m0vwy0LzKeXFTPLH0NzwmoJ3fNCIq0g==
+      integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
   /@types/parse-json/4.0.0:
     dev: true
     resolution:
@@ -1563,7 +1565,7 @@ packages:
       integrity: sha512-dbHzO3aAq1lB3jRQuNpuZ/mnu+CdD3H0WVaaBQA8LTT3S33xhVBUj232T8M3tAhSWJs/D/UqORYUlJNl/8VQZg==
   /@types/resolve/0.0.8:
     dependencies:
-      '@types/node': 14.0.27
+      '@types/node': 14.6.0
     dev: true
     resolution:
       integrity: sha512-auApPaJf3NPfe18hSoJkp8EbZzer2ISk7o8mCC3M9he/a04+gbMF97NkpD2S8riMGvm4BMRI59/SZQSaLTKpsQ==
@@ -2960,7 +2962,7 @@ packages:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
     resolution:
       integrity: sha512-Y2c4b55R+6ZzwtTppKwSmK/Kar8AdLiC2f9NADCuxbcTgPPg41Gyqa6b9GppgXSvCtkRw43ZE86CT5sejKC6/g==
-  /eslint-plugin-react-hooks/4.0.8_eslint@7.7.0:
+  /eslint-plugin-react-hooks/4.1.0_eslint@7.7.0:
     dependencies:
       eslint: 7.7.0
     dev: true
@@ -2969,7 +2971,7 @@ packages:
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
     resolution:
-      integrity: sha512-6SSb5AiMCPd8FDJrzah+Z4F44P2CdOaK026cXFV+o/xSRzfOiV1FNFeLl2z6xm3yqWOQEZ5OfVgiec90qV2xrQ==
+      integrity: sha512-36zilUcDwDReiORXmcmTc6rRumu9JIM3WjSvV0nclHoUQ0CNrX866EwONvLR/UqaeqFutbAnVu8PEmctdo2SRQ==
   /eslint-plugin-react/7.20.6_eslint@6.8.0:
     dependencies:
       array-includes: 3.1.1
@@ -4221,6 +4223,18 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-6d4V2f4nxzIzwendo27Tr0aFm+IXWa0XEUnaH6nU0FMaozxovt+sfRvh4J47wL1OvF83I3SSTu0XK+i4Bqe7uA==
+  /jest-extended/0.11.5:
+    dependencies:
+      expect: 24.9.0
+      jest-get-type: 22.4.3
+      jest-matcher-utils: 22.4.3
+    dev: true
+    resolution:
+      integrity: sha512-3RsdFpLWKScpsLD6hJuyr/tV5iFOrw7v6YjA3tPdda9sJwoHwcMROws5gwiIZfcwhHlJRwFJB2OUvGmF3evV/Q==
+  /jest-get-type/22.4.3:
+    dev: true
+    resolution:
+      integrity: sha512-/jsz0Y+V29w1chdXVygEKSz2nBoHoYqNShPe+QgxSNjAuP1i8+k4LbQNrfoliKej0P45sivkSCh7yiD6ubHS3w==
   /jest-get-type/24.9.0:
     dev: true
     engines:
@@ -4285,6 +4299,14 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-tYkFIDsiKTGwb2FG1w8hX9V0aUb2ot8zY/2nFg087dUageonw1zrLMP4W6zsRO59dPkTSKie+D4rhMuP9nRmrA==
+  /jest-matcher-utils/22.4.3:
+    dependencies:
+      chalk: 2.4.2
+      jest-get-type: 22.4.3
+      pretty-format: 22.4.3
+    dev: true
+    resolution:
+      integrity: sha512-lsEHVaTnKzdAPR5t4B6OcxXo9Vy4K+kRRbG5gtddY8lBEC+Mlpvm1CJcsMESRjzUhzkz568exMV1hTB76nAKbA==
   /jest-matcher-utils/24.9.0:
     dependencies:
       chalk: 2.4.2
@@ -5550,6 +5572,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
+  /pretty-format/22.4.3:
+    dependencies:
+      ansi-regex: 3.0.0
+      ansi-styles: 3.2.1
+    dev: true
+    resolution:
+      integrity: sha512-S4oT9/sT6MN7/3COoOy+ZJeA92VmOnveLHgrwBE3Z1W5N9S2A1QGNYiE1z75DAENbJrXXUb+OWXhpJcg05QKQQ==
   /pretty-format/24.9.0:
     dependencies:
       '@jest/types': 24.9.0
@@ -6032,7 +6061,7 @@ packages:
   /rollup/1.32.1:
     dependencies:
       '@types/estree': 0.0.45
-      '@types/node': 14.0.27
+      '@types/node': 14.6.0
       acorn: 7.4.0
     dev: true
     hasBin: true
