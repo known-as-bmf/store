@@ -31,7 +31,14 @@ export function useStore<S>(
   );
 
   useEffect(
-    () => subscribe(store, ({ current }) => setState(current), selector),
+    () =>
+      subscribe(
+        store,
+        ({ current }) => {
+          setState(current);
+        },
+        selector
+      ),
     [store, selector]
   );
 
