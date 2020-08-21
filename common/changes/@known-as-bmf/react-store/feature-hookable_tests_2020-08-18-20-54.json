@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@known-as-bmf/react-store",
+      "comment": "remove useless return",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@known-as-bmf/react-store",
+  "email": "avert.julien@gmail.com"
+}
