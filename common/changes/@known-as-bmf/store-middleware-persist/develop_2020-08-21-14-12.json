@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@known-as-bmf/store-middleware-persist",
+      "comment": "add include / exclude mechanism",
+      "type": "minor"
+    }
+  ],
+  "packageName": "@known-as-bmf/store-middleware-persist",
+  "email": "avert.julien@gmail.com"
+}
