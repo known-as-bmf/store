@@ -1,0 +1,3 @@
+{
+  "extends": "toolchain/api-extractor.base.json"
+}

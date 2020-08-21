@@ -3,8 +3,9 @@ import { Store, StateChangedEvent, subscribe } from '@known-as-bmf/store';
 
 /**
  * Creates an observable from the store, emitting every time the store is updated.
- * @param store The store to observe.
+ * @param store - The store to observe.
  * @throws {TypeError} if the store is not a correct `Store` instance.
+ * @public
  */
 export function obs<S>(store: Store<S>): Observable<StateChangedEvent<S>> {
   return fromEventPattern<StateChangedEvent<S>>(
