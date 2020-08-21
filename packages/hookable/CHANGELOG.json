@@ -1,0 +1,17 @@
+{
+  "name": "@known-as-bmf/hookable",
+  "entries": [
+    {
+      "version": "3.0.1",
+      "tag": "@known-as-bmf/hookable_v3.0.1",
+      "date": "Fri, 21 Aug 2020 14:45:56 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add unit tests to @known-as-bmf/hookable"
+          }
+        ]
+      }
+    }
+  ]
+}

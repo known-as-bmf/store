@@ -32,7 +32,7 @@
     "lint": "toolchain lint"
   },
   "devDependencies": {
-    "@known-as-bmf/hookable": "workspace:^3.0.0",
+    "@known-as-bmf/hookable": "workspace:^3.0.1",
     "@types/jest": "26.0.10",
     "eslint": "7.7.0",
     "eslint-config-bmf": "workspace:*",
@@ -41,7 +41,7 @@
     "typescript": "3.9.7"
   },
   "dependencies": {
-    "@known-as-bmf/hookable": "workspace:^3.0.0",
+    "@known-as-bmf/hookable": "workspace:^3.0.1",
     "immer": "7.0.7"
   },
   "publishConfig": {
