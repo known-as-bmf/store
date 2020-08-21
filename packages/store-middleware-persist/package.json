@@ -37,6 +37,7 @@
   "devDependencies": {
     "@known-as-bmf/store": "workspace:^3.0.0",
     "@types/jest": "26.0.10",
+    "@types/lodash": "4.14.159",
     "eslint": "7.7.0",
     "eslint-config-bmf": "workspace:*",
     "toolchain": "workspace:*",
@@ -45,6 +46,9 @@
   },
   "peerDependencies": {
     "@known-as-bmf/store": "workspace:^3.0.0"
+  },
+  "dependencies": {
+    "lodash": "4.17.20"
   },
   "publishConfig": {
     "access": "public"

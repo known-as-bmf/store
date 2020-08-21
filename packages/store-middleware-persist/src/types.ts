@@ -1,4 +1,4 @@
-export interface PersistOptions {
+export interface PersistOptions<S extends Record<string, unknown>> {
   /**
    * Which `Storage` instance to use for persistence.
    */
@@ -7,4 +7,12 @@ export interface PersistOptions {
    * The cache key. Usually a unique key.
    */
   key: string;
+  /**
+   * list of properties to persist.
+   */
+  include?: (keyof S)[];
+  /**
+   * list of properties to ignore.
+   */
+  exclude?: (keyof S)[];
 }

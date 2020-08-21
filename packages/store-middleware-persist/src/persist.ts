@@ -1,24 +1,37 @@
 import { Middleware } from '@known-as-bmf/store';
+import { pick, omit, defaultsDeep } from 'lodash';
 
 import { PersistOptions } from './types';
 
-export const persistMiddleware = <S>({
-  storage = localStorage,
-  key,
-}: PersistOptions): Middleware<S> => (_, hooks) => {
-  let skipTick = false;
+const pickPersistedProperties = <S extends Record<string, unknown>>(
+  state: S,
+  include?: (keyof S)[],
+  exclude?: (keyof S)[]
+): Partial<S> => {
+  const includeProps = include ? include : Object.keys(state);
+  const excludeProps = exclude ? exclude : [];
+  return omit(pick(state, includeProps), excludeProps) as Partial<S>;
+};
 
+export const persistMiddleware = <S extends Record<string, unknown>>({
+  key,
+  storage = localStorage,
+  include,
+  exclude,
+}: PersistOptions<S>): Middleware<S> => (_, hooks) => {
   // this hook will only be called once, on store init (we unsubscribe after being fired once)
   hooks.transformState((unsubscribe) => (state) => {
     unsubscribe();
 
-    const persistedState = storage.getItem(key);
+    const persisted = storage.getItem(key);
 
     let initialState: S;
-    if (persistedState) {
-      // if we retrieve a persisted state, no need to re-persist it immediately
-      skipTick = true;
-      initialState = JSON.parse(persistedState) as S;
+    if (persisted) {
+      // merge what was persisted with the initial value of the store
+      initialState = defaultsDeep(
+        pickPersistedProperties(JSON.parse(persisted), include, exclude),
+        state
+      ) as S;
     } else {
       initialState = state;
     }
@@ -27,10 +40,8 @@ export const persistMiddleware = <S>({
   });
 
   hooks.stateDidChange(() => (state) => {
-    if (skipTick) {
-      skipTick = false;
-    } else {
-      storage.setItem(key, JSON.stringify(state));
-    }
+    const persisted = pickPersistedProperties(state, include, exclude);
+
+    storage.setItem(key, JSON.stringify(persisted));
   });
 };
