@@ -1,9 +1,10 @@
 import { AnyFn, Hook } from './types';
 
 /**
+ * Create a hook subscriber that never unsubscribes.
  *
  * @param fn - The hook to register.
- * @returns A hook subscriber that never unsubscribes.
+ *
  * @public
  */
 export const every = <H extends AnyFn>(fn: H): Hook<H> => () => {
@@ -11,9 +12,10 @@ export const every = <H extends AnyFn>(fn: H): Hook<H> => () => {
 };
 
 /**
+ * Create a hook subscriber that unsubscribes after the first call.
  *
  * @param fn - The hook to register.
- * @returns A hook subscriber that unsubscribes after the first call.
+ *
  * @public
  */
 export const once = <H extends AnyFn>(fn: H): Hook<H> => (unsub) => {

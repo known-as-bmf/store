@@ -1,3 +1,8 @@
+/**
+ * Middleware options.
+ *
+ * @public
+ */
 export interface PersistOptions<S extends Record<string, unknown>> {
   /**
    * Which `Storage` instance to use for persistence.

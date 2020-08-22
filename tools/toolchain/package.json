@@ -9,7 +9,7 @@
     "test": ""
   },
   "devDependencies": {
-    "@microsoft/api-extractor": "7.9.7",
+    "@microsoft/api-extractor": "7.9.9",
     "@types/jest": "26.0.10",
     "jest-standard-reporter": "1.1.1",
     "tsdx": "0.13.2",

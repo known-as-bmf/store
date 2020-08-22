@@ -1,2 +1,2 @@
 export { Validator } from './types';
-export { validatorMiddleware } from './validator';
+export { validationMiddleware } from './validator';

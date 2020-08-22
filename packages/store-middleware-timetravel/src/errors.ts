@@ -1,3 +1,8 @@
+/**
+ * Map of error messages that can be thrown by the middleware.
+ *
+ * @internal
+ */
 export const errors = {
   invalidStore:
     'Provided value is not a valid store instance or has not been initialized with timetravel middleware.',

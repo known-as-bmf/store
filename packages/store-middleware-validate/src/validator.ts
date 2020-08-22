@@ -5,10 +5,12 @@ import { errors } from './errors';
 
 /**
  * Create a new validation middleware.
- * @param validators A list of validators that will be checked against every
- * time the state is being changed.
+ *
+ * @param validators - A list of validators that will be checked against every time the state is about to change.
+ *
+ * @public
  */
-export const validatorMiddleware = <S>(
+export const validationMiddleware = <S>(
   validators: Validator<S>[]
 ): Middleware<S> => (_, hooks) => {
   hooks.stateWillChange(() => (futureState) => {

@@ -3,17 +3,28 @@ import { deref, subscribe, Store, Selector, swap } from '@known-as-bmf/store';
 
 import { StoreHookResult, PartialSwap } from './types';
 
+/**
+ * Default state selector (whole state).
+ *
+ * @internal
+ */
 const id = <T>(x: T): T => x;
 
 /**
  * Subscribe to a store and re-render when its state changes.
- * @param store The store to subscribe to.
+ *
+ * @param store - The store to subscribe to.
+ *
+ * @public
  */
 export function useStore<S>(store: Store<S>): StoreHookResult<S, S>;
 /**
  * Subscribe to part of a state of a store and re-render when it changes.
- * @param store The store to subscribe to.
- * @param selector The part of the state to subscribe to.
+ *
+ * @param store - The store to subscribe to.
+ * @param selector - The part of the state to subscribe to.
+ *
+ * @public
  */
 export function useStore<S, R>(
   store: Store<S>,
