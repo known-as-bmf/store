@@ -4,9 +4,7 @@
   "author": "Julien Avert",
   "private": true,
   "scripts": {
-    "start": "",
-    "build": "",
-    "test": ""
+    "build": ""
   },
   "devDependencies": {
     "@microsoft/api-extractor": "7.9.9",

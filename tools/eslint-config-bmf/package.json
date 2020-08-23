@@ -4,9 +4,7 @@
   "author": "Julien Avert",
   "private": true,
   "scripts": {
-    "start": "",
-    "build": "",
-    "test": ""
+    "build": ""
   },
   "devDependencies": {
     "@rushstack/eslint-config": "1.2.0",
