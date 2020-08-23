@@ -1,0 +1,16 @@
+{
+  "changes": [
+    {
+      "packageName": "@known-as-bmf/store-middleware-validate",
+      "comment": "add typedoc",
+      "type": "patch"
+    },
+    {
+      "packageName": "@known-as-bmf/store-middleware-validate",
+      "comment": "change middleware function name",
+      "type": "major"
+    }
+  ],
+  "packageName": "@known-as-bmf/store-middleware-validate",
+  "email": "avert.julien@gmail.com"
+}

@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@known-as-bmf/store",
+      "comment": "add typedoc",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@known-as-bmf/store",
+  "email": "avert.julien@gmail.com"
+}

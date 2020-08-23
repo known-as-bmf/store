@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@known-as-bmf/hookable",
+      "comment": "add typedoc",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@known-as-bmf/hookable",
+  "email": "avert.julien@gmail.com"
+}
