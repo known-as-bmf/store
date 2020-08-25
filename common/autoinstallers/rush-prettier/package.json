@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "prettier": "2.0.5",
+    "prettier": "2.1.0",
     "pretty-quick": "3.0.0"
   }
 }
