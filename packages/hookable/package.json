@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@types/jest": "26.0.12",
-    "eslint": "7.8.0",
+    "eslint": "7.8.1",
     "eslint-config-bmf": "workspace:*",
     "jest-extended": "0.11.5",
     "toolchain": "workspace:*",

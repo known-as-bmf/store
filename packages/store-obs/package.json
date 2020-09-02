@@ -37,7 +37,7 @@
   "devDependencies": {
     "@known-as-bmf/store": "workspace:^3.0.0",
     "@types/jest": "26.0.12",
-    "eslint": "7.8.0",
+    "eslint": "7.8.1",
     "eslint-config-bmf": "workspace:*",
     "rxjs": "^6.6.0",
     "toolchain": "workspace:*",
