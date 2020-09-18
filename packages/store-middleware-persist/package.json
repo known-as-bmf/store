@@ -24,7 +24,7 @@
   "files": [
     "dist"
   ],
-  "main": "dist/index.js",
+  "main": "dist/store-middleware-persist.cjs.development.js",
   "module": "dist/store-middleware-persist.esm.js",
   "typings": "dist/index.d.ts",
   "scripts": {

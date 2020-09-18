@@ -23,7 +23,7 @@
   "files": [
     "dist"
   ],
-  "main": "dist/index.js",
+  "main": "dist/react-store.cjs.development.js",
   "module": "dist/react-store.esm.js",
   "typings": "dist/index.d.ts",
   "scripts": {

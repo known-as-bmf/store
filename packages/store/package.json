@@ -21,7 +21,7 @@
   "files": [
     "dist"
   ],
-  "main": "dist/index.js",
+  "main": "dist/store.cjs.development.js",
   "module": "dist/store.esm.js",
   "typings": "dist/index.d.ts",
   "scripts": {

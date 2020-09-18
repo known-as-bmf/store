@@ -23,7 +23,7 @@
   "files": [
     "dist"
   ],
-  "main": "dist/index.js",
+  "main": "dist/store-middleware-validate.cjs.development.js",
   "module": "dist/store-middleware-validate.esm.js",
   "typings": "dist/index.d.ts",
   "scripts": {

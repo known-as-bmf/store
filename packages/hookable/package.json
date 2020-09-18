@@ -20,7 +20,7 @@
   "files": [
     "dist"
   ],
-  "main": "dist/index.js",
+  "main": "dist/hookable.cjs.development.js",
   "module": "dist/hookable.esm.js",
   "typings": "dist/index.d.ts",
   "scripts": {
