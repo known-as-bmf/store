@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-bmf",
+  "name": "@known-as-bmf/eslint-config-bmf",
   "version": "1.0.0",
   "author": "Julien Avert",
   "private": true,
@@ -8,8 +8,12 @@
   },
   "devDependencies": {
     "@rushstack/eslint-config": "1.3.0",
-    "eslint": "7.8.1",
-    "eslint-plugin-react-hooks": "4.1.0",
+    "@typescript-eslint/eslint-plugin": "4.1.1",
+    "@typescript-eslint/experimental-utils": "4.1.1",
+    "@typescript-eslint/parser": "4.1.1",
+    "@typescript-eslint/typescript-estree": "4.1.1",
+    "eslint": "7.9.0",
+    "eslint-plugin-react-hooks": "4.1.2",
     "typescript": "4.0.2"
   }
 }

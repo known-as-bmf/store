@@ -5,12 +5,13 @@ import {
   TapOutput,
 } from '@known-as-bmf/hookable';
 
-///@ts-ignore
 /**
  * A store instance.
  *
  * @public
  */
+///@ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export interface Store<S> {}
 
 /**

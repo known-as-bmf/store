@@ -3,7 +3,10 @@
  *
  * @internal
  */
-export type AnyFn = (...args: any[]) => unknown;
+export type AnyFn = (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ...args: any[]
+) => unknown;
 
 /**
  * `transformInput` hook function.
@@ -12,7 +15,7 @@ export type AnyFn = (...args: any[]) => unknown;
  */
 export type TransformInput<F extends AnyFn> = F extends (
   ...args: infer A
-) => any
+) => unknown
   ? (...args: A) => A
   : never;
 
@@ -21,7 +24,7 @@ export type TransformInput<F extends AnyFn> = F extends (
  *
  * @public
  */
-export type TapInput<F extends AnyFn> = F extends (...args: infer A) => any
+export type TapInput<F extends AnyFn> = F extends (...args: infer A) => unknown
   ? (...args: A) => void
   : never;
 
@@ -31,6 +34,7 @@ export type TapInput<F extends AnyFn> = F extends (...args: infer A) => any
  * @public
  */
 export type TransformOutput<F extends AnyFn> = F extends (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ...args: any[]
 ) => infer R
   ? (...args: [R]) => R
@@ -41,7 +45,10 @@ export type TransformOutput<F extends AnyFn> = F extends (
  *
  * @public
  */
-export type TapOutput<F extends AnyFn> = F extends (...args: any[]) => infer R
+export type TapOutput<F extends AnyFn> = F extends (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ...args: any[]
+) => infer R
   ? (...args: [R]) => void
   : never;
 

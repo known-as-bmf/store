@@ -33,6 +33,13 @@ const STATE = Symbol();
 const SET_STATE = Symbol();
 
 /**
+ * Internal subscription type.
+ *
+ * @internal
+ */
+type Subscription<S, R> = [Selector<S, R>, SubscriptionCallback<S>];
+
+/**
  * The store class.
  *
  * @internal
@@ -42,13 +49,6 @@ class StoreImpl<S> implements Store<S> {
   public declare [STATE]: S;
   public declare [SET_STATE]: (state: S) => S;
 }
-
-/**
- * Internal subscription type.
- *
- * @internal
- */
-type Subscription<S, R> = [Selector<S, R>, SubscriptionCallback<S>];
 
 /**
  * Check if a value is a Store instance.
@@ -82,8 +82,7 @@ function assertStore<S>(store: Store<S>): asserts store is StoreImpl<S> {
  * @internal
  */
 function getState<S>(store: StoreImpl<S>): S {
-  const { [STATE]: state } = store;
-  return state;
+  return store[STATE];
 }
 
 /**

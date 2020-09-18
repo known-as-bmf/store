@@ -1,4 +1,4 @@
 module.exports = {
-  preset: 'toolchain',
+  preset: '@known-as-bmf/toolchain',
   setupFilesAfterEnv: ['jest-extended'],
 };

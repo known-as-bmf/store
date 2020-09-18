@@ -67,7 +67,7 @@ describe('obs', () => {
     });
 
     // wait for async operations to finish
-    await new Promise((res) => setTimeout(res));
+    await new Promise((resolve) => setTimeout(resolve));
 
     expect(nextFn).not.toHaveBeenCalled();
   });

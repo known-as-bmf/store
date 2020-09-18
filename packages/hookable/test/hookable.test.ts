@@ -3,7 +3,10 @@ import { createHookable } from '../src';
 const noop = (): void => {};
 
 const createPlainSubscriber = (hook: jest.Mock): [jest.Mock, jest.Mock] => {
-  const hookSubscriber = jest.fn(() => (...args: any[]) => hook(...args));
+  const hookSubscriber = jest.fn(() => (
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ...args: any[]
+  ) => hook(...args));
 
   return [hookSubscriber, hook];
 };
@@ -11,7 +14,10 @@ const createPlainSubscriber = (hook: jest.Mock): [jest.Mock, jest.Mock] => {
 const createUnsubscribingSubscriber = (
   hook: jest.Mock
 ): [jest.Mock, jest.Mock] => {
-  const hookSubscriber = jest.fn((unsub) => (...args: any[]) => {
+  const hookSubscriber = jest.fn((unsub) => (
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ...args: any[]
+  ) => {
     unsub();
     hook(...args);
   });
