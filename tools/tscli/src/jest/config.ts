@@ -1,7 +1,6 @@
 import { Config } from '@jest/types';
 
 import { ProjectContext } from '../utils/project';
-import { isAbsolute } from 'path';
 
 export const createBaseJestConfig = (): Config.InitialOptions => {
   return {
