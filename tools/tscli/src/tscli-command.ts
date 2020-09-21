@@ -1,44 +1,11 @@
 import { string } from '@oclif/command/lib/flags';
 import { Command } from '@oclif/command';
 import { PrettyPrintableError } from '@oclif/errors';
-import { EOL } from 'os';
-import chalk from 'chalk';
 
 import { createProjectContext, ProjectContext } from './utils/project';
 import { cwd, setEnvironment } from './utils/process';
-import { TscliConfig } from './types';
-
-function buildErrorMessage(error: any): string {
-  if (typeof error === 'string') {
-    return error;
-  }
-
-  let message = '';
-
-  if (error.plugin) {
-    message += `(${error.plugin}) `;
-  }
-
-  // if (error.name) {
-  //   message += `${error.name}: `;
-  // }
-
-  message += `${error.message}${EOL}`;
-
-  message = chalk.bold.red(message);
-
-  if (error.loc) {
-    message += `at ${error.loc.file}:${error.loc.line}:${error.loc.column}${EOL}`;
-  }
-
-  if (error.frame) {
-    message += chalk.dim(`${error.frame}${EOL}`);
-  } else if (error.stack) {
-    message += chalk.dim(`${error.stack}${EOL}`);
-  }
-
-  return message;
-}
+import { formatError } from './utils/error';
+import { checkTscliConfiguration, TscliConfiguration } from './types';
 
 const commandInput = {
   flags: { tscli: string({ description: 'tscli configuration file.' }) },
@@ -52,7 +19,7 @@ export abstract class TscliCommand extends Command {
   /**
    * tscli configuration loaded from config file or argv tscli parameter.
    */
-  protected tscli: TscliConfig | undefined = undefined;
+  protected tscli: TscliConfiguration | undefined = undefined;
 
   /**
    * project context.
@@ -60,18 +27,26 @@ export abstract class TscliCommand extends Command {
   protected project: ProjectContext = project;
 
   public async init(): Promise<void> {
-    const ctor = this.ctor as typeof TscliCommand;
-    const env = ctor.env;
+    const { env } = this.ctor as typeof TscliCommand;
 
     if (env) {
       setEnvironment(env);
     }
 
-    const { flags, argv } = this.parse(commandInput); // remplacer ctor par un object de conf manuel
-    // https://github.com/oclif/command/blob/master/src/command.ts#L159
+    const { flags, argv } = this.parse(commandInput);
+
+    const tscli = this.project.require(
+      // command line param has precedence
+      flags.tscli || this.project.files.tscliConfigFile
+    );
+
+    checkTscliConfiguration(tscli);
+
+    this.tscli = tscli;
 
     if (flags.tscli) {
-      this.tscli = {};
+      // command line param --tscli was present
+      // child commands are not expecting it -> remove it from args
       this.argv = argv;
     }
 
@@ -87,6 +62,6 @@ export abstract class TscliCommand extends Command {
     options?: { code?: string; exit?: number } & PrettyPrintableError
   ): never;
   public error(input: string | Error, options?: any): void | never {
-    return super.error(buildErrorMessage(input), options);
+    return super.error(formatError(input), options);
   }
 }

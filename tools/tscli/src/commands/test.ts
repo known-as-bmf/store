@@ -1,5 +1,4 @@
 import { string } from '@oclif/command/lib/flags';
-import chalk from 'chalk';
 import { run } from 'jest';
 
 import { TscliCommand } from '../tscli-command';
@@ -25,9 +24,9 @@ export default class TestCommand extends TscliCommand {
     const configFilePath = flags.config || this.project.files.jestConfigFile;
 
     if (configFilePath) {
-      console.log(chalk.bold`Using config file: '${configFilePath}'`);
+      console.log(`Using config file: '${configFilePath}'`);
     } else {
-      console.log(chalk.bold`No jest config file found.`);
+      console.log('No jest config file found.');
     }
 
     const config = createJestConfig(this.project, configFilePath);

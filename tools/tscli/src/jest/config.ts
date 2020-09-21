@@ -20,17 +20,14 @@ export const createJestConfig = (
   project: ProjectContext,
   configFilePath?: string
 ): Config.InitialOptions => {
-  let configFile: Config.InitialOptions = {};
-
-  if (configFilePath) {
-    configFile = isAbsolute(configFilePath)
-      ? require(configFilePath)
-      : project.require.fromCwd(configFilePath);
-  }
+  const packageJsonConfig = project.require<{ jest?: Config.InitialOptions }>(
+    project.files.packageJson
+  ).jest;
+  const configFile = project.require<Config.InitialOptions>(configFilePath);
 
   return {
     ...createBaseJestConfig(),
-    ...require(project.files.packageJson).jest,
+    ...packageJsonConfig,
     ...configFile,
     rootDir: project.directories.root,
   };

@@ -5,20 +5,13 @@ import { TscliCommand } from '../tscli-command';
 
 import { createRollupConfig } from '../rollup/config';
 import { sequence } from '../utils/promise';
-import { BuildConfiguration } from '../types';
+import { BuildConfiguration, checkBuildConfiguration } from '../types';
 
 const defaults: BuildConfiguration = {
   entry: 'src/index.ts',
   format: ['cjs', 'esm'],
   output: 'dist',
 };
-
-function assertValidBuildConfig(
-  config: Partial<BuildConfiguration>
-): asserts config is BuildConfiguration {
-  if (config.entry) {
-  }
-}
 
 export default class BuildCommand extends TscliCommand {
   public static env = 'production';
@@ -50,7 +43,7 @@ export default class BuildCommand extends TscliCommand {
       ...cliBuildConfig,
     };
 
-    assertValidBuildConfig(config);
+    checkBuildConfiguration(config);
 
     const [input, outputs] = createRollupConfig(this.project, config);
 

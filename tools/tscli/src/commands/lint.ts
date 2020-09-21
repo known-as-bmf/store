@@ -1,6 +1,5 @@
 import { flags } from '@oclif/command/lib';
 import { IFlag } from '@oclif/command/lib/flags';
-import chalk from 'chalk';
 import { ESLint } from 'eslint';
 
 import { TscliCommand } from '../tscli-command';
@@ -24,7 +23,7 @@ export default class LintCommand extends TscliCommand {
 
     const files = argv && argv.length ? argv : ['src', 'test'];
 
-    this.log(chalk.bold`Linting dir(s) / file(s): ${files.join(', ')}`);
+    this.log(`Linting dir(s) / file(s): ${files.join(', ')}`);
 
     const eslint = new ESLint({
       cwd: this.project.directories.root,
@@ -46,10 +45,8 @@ export default class LintCommand extends TscliCommand {
       console.error(resultText);
 
       if (hasFixable) {
-        console.error(chalk.yellow`Some errors or warning are auto-fixable.`);
-        console.error(
-          chalk.yellow`Try using the ${chalk.bold.white`--fix`} cli flag.`
-        );
+        console.error('Some errors or warning are auto-fixable.');
+        console.error('Try using the --fix cli flag.');
       }
 
       if (hasErrors) {
@@ -57,7 +54,7 @@ export default class LintCommand extends TscliCommand {
         this.exit(1);
       }
     } else {
-      console.log(chalk.green('Everything is fine ✅'));
+      console.log('Everything is fine ✅');
     }
   }
 }

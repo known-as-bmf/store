@@ -43,7 +43,7 @@
     "@types/jest": "26.0.14",
     "eslint": "7.9.0",
     "tslib": "2.0.1",
-    "typescript": "4.0.2"
+    "typescript": "4.0.3"
   },
   "peerDependencies": {
     "@known-as-bmf/store": "workspace:^3.0.0"
