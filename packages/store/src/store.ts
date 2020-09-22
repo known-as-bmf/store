@@ -16,21 +16,21 @@ import {
  *
  * @internal
  */
-const SUBSCRIPTIONS = Symbol();
+const SUBSCRIPTIONS: unique symbol = Symbol();
 
 /**
  * Current state of the store.
  *
  * @internal
  */
-const STATE = Symbol();
+const STATE: unique symbol = Symbol();
 
 /**
  * State transformation (middleware).
  *
  * @internal
  */
-const SET_STATE = Symbol();
+const SET_STATE: unique symbol = Symbol();
 
 /**
  * Internal subscription type.

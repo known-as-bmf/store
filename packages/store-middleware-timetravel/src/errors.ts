@@ -3,7 +3,20 @@
  *
  * @internal
  */
-export const errors = {
+interface ErrorMessages {
+  invalidStore: string;
+  historyDepthValue(depth: number): string;
+  negativeStep(steps: number): string;
+  outOfBoundsBackward: string;
+  outOfBoundsForward: string;
+}
+
+/**
+ * Map of error messages that can be thrown by the middleware.
+ *
+ * @internal
+ */
+export const errors: ErrorMessages = {
   invalidStore:
     'Provided value is not a valid store instance or has not been initialized with timetravel middleware.',
   historyDepthValue: (depth: number): string =>

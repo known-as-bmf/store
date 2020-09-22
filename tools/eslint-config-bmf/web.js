@@ -1,5 +1,8 @@
 module.exports = {
-  extends: ['@rushstack/eslint-config'],
+  extends: [
+    '@rushstack/eslint-config/profile/web-app',
+    '@rushstack/eslint-config/mixins/tsdoc',
+  ],
 
   // plugins: ['@typescript-eslint/eslint-plugin'],
 
@@ -19,19 +22,6 @@ module.exports = {
             allowExpressions: true,
             allowTypedFunctionExpressions: true,
             allowHigherOrderFunctions: true,
-          },
-        ],
-        '@typescript-eslint/typedef': [
-          'error',
-          {
-            arrayDestructuring: false,
-            arrowParameter: false,
-            memberVariableDeclaration: false,
-            objectDestructuring: false,
-            parameter: false,
-            propertyDeclaration: false,
-            variableDeclaration: false,
-            variableDeclarationIgnoreFunction: false,
           },
         ],
         '@typescript-eslint/no-use-before-define': [

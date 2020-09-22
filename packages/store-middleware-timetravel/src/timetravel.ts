@@ -8,19 +8,19 @@ import { errors } from './errors';
  *
  * @internal
  */
-const HISTORY = Symbol();
+const HISTORY: unique symbol = Symbol();
 /**
  * Symbol used to reference the current index in the state history array.
  *
  * @internal
  */
-const HISTORY_INDEX = Symbol();
+const HISTORY_INDEX: unique symbol = Symbol();
 /**
  * Symbol used to reference the fact that the current state change was due to a imetravel.
  *
  * @internal
  */
-const IS_TIMETRAVELING = Symbol();
+const IS_TIMETRAVELING: unique symbol = Symbol();
 
 /**
  * Store object extension.
@@ -154,7 +154,7 @@ export function derefHistory<S>(
  *
  * @public
  */
-export function undo<S>(store: Store<S>, steps = 1): void {
+export function undo<S>(store: Store<S>, steps: number = 1): void {
   assertTimetravelStore(store);
 
   if (steps < 0) {
@@ -176,7 +176,7 @@ export function undo<S>(store: Store<S>, steps = 1): void {
  *
  * @public
  */
-export function redo<S>(store: Store<S>, steps = 1): void {
+export function redo<S>(store: Store<S>, steps: number = 1): void {
   assertTimetravelStore(store);
 
   if (steps < 0) {

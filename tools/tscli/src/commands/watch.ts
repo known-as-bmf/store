@@ -1,10 +1,9 @@
 import { flags } from '@oclif/command';
-import { rollup, RollupBuild } from 'rollup';
+import { watch } from 'rollup';
 
 import { TscliCommand } from '../tscli-command';
 
 import { createRollupConfig } from '../rollup/config';
-import { sequence } from '../utils/promise';
 import { BuildConfiguration, checkBuildConfiguration } from '../types';
 
 const defaults: BuildConfiguration = {
@@ -13,8 +12,8 @@ const defaults: BuildConfiguration = {
   output: 'dist',
 };
 
-export default class BuildCommand extends TscliCommand {
-  public static env = 'production';
+export default class WatchCommand extends TscliCommand {
+  public static env = 'development';
 
   public static description = 'Build your project';
 
@@ -34,7 +33,7 @@ export default class BuildCommand extends TscliCommand {
   };
 
   public async run(): Promise<void> {
-    const { flags: cliBuildConfig } = this.parse(BuildCommand);
+    const { flags: cliBuildConfig } = this.parse(WatchCommand);
 
     const config: Partial<BuildConfiguration> = {
       ...defaults,
@@ -46,19 +45,10 @@ export default class BuildCommand extends TscliCommand {
 
     const [input, outputs] = createRollupConfig(this.project, config);
 
-    let rollupBuild: RollupBuild;
-    try {
-      rollupBuild = await rollup(input);
-    } catch (error) {
-      this.error(error);
-    }
+    const watcher = watch({ ...input, output: outputs });
 
-    try {
-      /*const rollupOutputs = */ await sequence(outputs, (output) =>
-        rollupBuild.write(output)
-      );
-    } catch (error) {
-      this.error(error);
-    }
+    watcher.on('event', (event) => {
+      console.log(event);
+    });
   }
 }
