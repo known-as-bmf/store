@@ -9,12 +9,14 @@ import {
   StructType,
 } from 'superstruct';
 
+// eslint-disable-next-line @rushstack/typedef-var
 const BuildConfigurationStruct = object({
   entry: string(),
   format: array(enums(['cjs', 'esm'])),
   output: string(),
 });
 
+// eslint-disable-next-line @rushstack/typedef-var
 const TscliConfigurationStruct = optional(
   object({
     build: optional(partial(BuildConfigurationStruct)),

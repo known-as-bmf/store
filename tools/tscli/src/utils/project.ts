@@ -35,7 +35,7 @@ export interface ProjectContext {
   /**
    * If path is absolute: require the file.
    * If it is relative, require it relative to CWD.
-   * @param path Relative or absolute path of the file to require.
+   * @param path - Relative or absolute path of the file to require.
    */
   readonly require: {
     <T>(path: string): T | never;
@@ -44,14 +44,14 @@ export interface ProjectContext {
   } & {
     /**
      * Require a relative path from the root of the project (where the package.json is).
-     * @param path Relative path of the file to require.
+     * @param path - Relative path of the file to require.
      */
     fromRoot<T>(path: string): T | never;
     fromRoot<T>(path: string | undefined): T | undefined | never;
     fromRoot(path: undefined): undefined;
     /**
      * Require a relative path from the current working dir.
-     * @param path Relative path of the file to require.
+     * @param path - Relative path of the file to require.
      */
     fromCwd<T>(path: string): T | never;
     fromCwd<T>(path: string | undefined): T | undefined | never;
@@ -59,7 +59,7 @@ export interface ProjectContext {
   };
 }
 
-const scopedPackagePattern = new RegExp('^(?:@([^/]+?)[/])?([^/]+?)$');
+const scopedPackagePattern: RegExp = new RegExp('^(?:@([^/]+?)[/])?([^/]+?)$');
 const explodePackageName = (name: string): { name: string; scope?: string } => {
   const match = name.match(scopedPackagePattern);
   if (!match) {

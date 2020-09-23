@@ -1,18 +1,24 @@
 import { string } from '@oclif/command/lib/flags';
 import { Command } from '@oclif/command';
+import { Input } from '@oclif/parser';
 import { PrettyPrintableError } from '@oclif/errors';
+import createLogger, { ProgressEstimator } from 'progress-estimator';
 
 import { createProjectContext, ProjectContext } from './utils/project';
 import { cwd, setEnvironment } from './utils/process';
 import { formatError } from './utils/error';
 import { checkTscliConfiguration, TscliConfiguration } from './types';
 
-const commandInput = {
+const commandInput: Input<{
+  tscli: string | undefined;
+}> = {
   flags: { tscli: string({ description: 'tscli configuration file.' }) },
   strict: false,
 };
 
-const project = createProjectContext(cwd());
+const project: ProjectContext = createProjectContext(cwd());
+const progress: ProgressEstimator = createLogger();
+
 export abstract class TscliCommand extends Command {
   public static env?: string;
 
@@ -25,6 +31,8 @@ export abstract class TscliCommand extends Command {
    * project context.
    */
   protected project: ProjectContext = project;
+
+  protected progress: ProgressEstimator = progress;
 
   public async init(): Promise<void> {
     const { env } = this.ctor as typeof TscliCommand;

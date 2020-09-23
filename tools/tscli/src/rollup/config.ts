@@ -76,7 +76,6 @@ export const createRollupConfig = (
           {
             ...baseOutput,
             entryFileNames: `${project.meta.name}.${format}.production.min.js`,
-
             plugins: [
               terser({
                 format: { comments: false },

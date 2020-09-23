@@ -5,5 +5,5 @@ export const setEnvironment = (env: string): void => {
   process.env.NODE_ENV = env;
 };
 
-const _cwd = realpathSync(process.cwd());
+const _cwd: string = realpathSync(process.cwd());
 export const cwd = (): string => _cwd;

@@ -1,5 +1,11 @@
 import { flags } from '@oclif/command';
-import { rollup, RollupBuild } from 'rollup';
+import {
+  InputOptions,
+  OutputOptions,
+  rollup,
+  RollupBuild,
+  RollupOutput,
+} from 'rollup';
 
 import { TscliCommand } from '../tscli-command';
 
@@ -33,6 +39,23 @@ export default class BuildCommand extends TscliCommand {
     }),
   };
 
+  private _build(inputOptions: InputOptions): Promise<RollupBuild> | never {
+    return this.progress(rollup(inputOptions), 'Building code', {
+      id: 'build',
+    }).catch((error) => this.error(error));
+  }
+
+  private _write(
+    build: RollupBuild,
+    outputsOptions: OutputOptions[]
+  ): Promise<RollupOutput[]> | never {
+    return this.progress(
+      sequence(outputsOptions, (outputOptions) => build.write(outputOptions)),
+      'Writing output',
+      { id: 'write' }
+    ).catch((error) => this.error(error));
+  }
+
   public async run(): Promise<void> {
     const { flags: cliBuildConfig } = this.parse(BuildCommand);
 
@@ -44,21 +67,13 @@ export default class BuildCommand extends TscliCommand {
 
     checkBuildConfiguration(config);
 
-    const [input, outputs] = createRollupConfig(this.project, config);
+    const [inputOptions, outputsOptions] = createRollupConfig(
+      this.project,
+      config
+    );
 
-    let rollupBuild: RollupBuild;
-    try {
-      rollupBuild = await rollup(input);
-    } catch (error) {
-      this.error(error);
-    }
+    const build: RollupBuild = await this._build(inputOptions);
 
-    try {
-      /*const rollupOutputs = */ await sequence(outputs, (output) =>
-        rollupBuild.write(output)
-      );
-    } catch (error) {
-      this.error(error);
-    }
+    const outputs = await this._write(build, outputsOptions);
   }
 }
