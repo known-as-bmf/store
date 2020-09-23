@@ -74,6 +74,6 @@ export default class BuildCommand extends TscliCommand {
 
     const build: RollupBuild = await this._build(inputOptions);
 
-    const outputs = await this._write(build, outputsOptions);
+    /*const outputs = */ await this._write(build, outputsOptions);
   }
 }
