@@ -19,7 +19,8 @@
   "bugs": "https://github.com/known-as-bmf/store/issues",
   "license": "MIT",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "main": "dist/store.cjs.development.js",
   "module": "dist/store.esm.js",
@@ -37,7 +38,7 @@
     "@known-as-bmf/toolchain": "workspace:*",
     "@known-as-bmf/hookable": "workspace:^3.0.0",
     "@types/jest": "26.0.14",
-    "eslint": "7.9.0",
+    "eslint": "7.10.0",
     "tslib": "2.0.1",
     "typescript": "4.0.3"
   },

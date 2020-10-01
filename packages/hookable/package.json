@@ -18,7 +18,8 @@
   "bugs": "https://github.com/known-as-bmf/store/issues",
   "license": "MIT",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "main": "dist/hookable.cjs.development.js",
   "module": "dist/hookable.esm.js",
@@ -35,7 +36,7 @@
     "@known-as-bmf/eslint-config-bmf": "workspace:*",
     "@known-as-bmf/toolchain": "workspace:*",
     "@types/jest": "26.0.14",
-    "eslint": "7.9.0",
+    "eslint": "7.10.0",
     "jest-extended": "0.11.5",
     "tslib": "2.0.1",
     "typescript": "4.0.3"
