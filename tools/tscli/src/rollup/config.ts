@@ -1,6 +1,8 @@
 import { InputOptions, OutputOptions } from 'rollup';
 import typescript from '@rollup/plugin-typescript';
 import nodeResolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import sourceMaps from 'rollup-plugin-sourcemaps';
 import json from '@rollup/plugin-json';
 import { terser } from 'rollup-plugin-terser';
 import del from 'rollup-plugin-delete';
@@ -24,30 +26,34 @@ export const createRollupConfig = (
       external,
       plugins: [
         del({ targets: [outputDir], runOnce: true }),
+        json(),
+        typescript({
+          tsconfig: project.files.tsConfigJson,
+          outDir: outputDir,
+          target: 'esnext',
+          // see: https://github.com/rollup/plugins/issues/287
+          rootDir: project.resolve.fromRoot('src'),
+          exclude: [
+            // all test files are ignored
+            '**/*.spec.ts',
+            '**/*.spec.tsx',
+            '**/*.test.ts',
+            '**/*.test.tsx',
+            // defaults
+            'node_modules',
+            'bower_components',
+            'jspm_packages',
+            // ignore dist
+            build.output,
+          ],
+        }),
+        commonjs(),
         nodeResolve({
           browser: true,
           rootDir: project.directories.root,
           extensions: ['.mjs', '.js', '.jsx', '.json', '.node'],
         }),
-        json(),
-        typescript({
-          tsconfig: project.files.tsConfigJson,
-          outDir: outputDir,
-          // see: https://github.com/rollup/plugins/issues/287
-          rootDir: project.resolve.fromRoot('src'),
-          exclude: [
-            // // all TS test files, regardless whether co-located or in test/ etc
-            '**/*.spec.ts',
-            '**/*.spec.tsx',
-            '**/*.test.ts',
-            '**/*.test.tsx',
-            // TS defaults below
-            'node_modules',
-            'bower_components',
-            'jspm_packages',
-            build.output,
-          ],
-        }),
+        sourceMaps(),
       ],
       treeshake: { propertyReadSideEffects: true },
     },

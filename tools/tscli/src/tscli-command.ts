@@ -2,12 +2,13 @@ import { string } from '@oclif/command/lib/flags';
 import { Command } from '@oclif/command';
 import { Input } from '@oclif/parser';
 import { PrettyPrintableError } from '@oclif/errors';
-import createLogger, { ProgressEstimator } from 'progress-estimator';
+import { ProgressEstimator } from 'progress-estimator';
 
 import { createProjectContext, ProjectContext } from './utils/project';
 import { cwd, setEnvironment } from './utils/process';
 import { formatError } from './utils/error';
 import { checkTscliConfiguration, TscliConfiguration } from './types';
+import { createProgressEstimator } from './utils/progress-estimator';
 
 const commandInput: Input<{
   tscli: string | undefined;
@@ -17,7 +18,7 @@ const commandInput: Input<{
 };
 
 const project: ProjectContext = createProjectContext(cwd());
-const progress: ProgressEstimator = createLogger();
+const progress: ProgressEstimator = createProgressEstimator(project);
 
 export abstract class TscliCommand extends Command {
   public static env?: string;

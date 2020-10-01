@@ -1,11 +1,15 @@
 import { flags } from '@oclif/command';
 import {
   InputOptions,
+  OutputChunk,
   OutputOptions,
   rollup,
   RollupBuild,
   RollupOutput,
 } from 'rollup';
+import gzipSize from 'gzip-size';
+import brotliSize from 'brotli-size';
+import prettyBytes from 'pretty-bytes';
 
 import { TscliCommand } from '../tscli-command';
 
@@ -39,7 +43,7 @@ export default class BuildCommand extends TscliCommand {
     }),
   };
 
-  private _build(inputOptions: InputOptions): Promise<RollupBuild> | never {
+  private _build(inputOptions: InputOptions): Promise<RollupBuild> {
     return this.progress(rollup(inputOptions), 'Building code', {
       id: 'build',
     }).catch((error) => this.error(error));
@@ -48,7 +52,7 @@ export default class BuildCommand extends TscliCommand {
   private _write(
     build: RollupBuild,
     outputsOptions: OutputOptions[]
-  ): Promise<RollupOutput[]> | never {
+  ): Promise<RollupOutput[]> {
     return this.progress(
       sequence(outputsOptions, (outputOptions) => build.write(outputOptions)),
       'Writing output',
@@ -74,6 +78,22 @@ export default class BuildCommand extends TscliCommand {
 
     const build: RollupBuild = await this._build(inputOptions);
 
-    /*const outputs = */ await this._write(build, outputsOptions);
+    const outputs: RollupOutput[] = await this._write(build, outputsOptions);
+
+    const reports = await Promise.all(
+      outputs
+        .flatMap((o) => o.output)
+        .filter((o): o is OutputChunk => o.type === 'chunk')
+        .map(async (o) => {
+          return {
+            fileName: o.fileName,
+            size: prettyBytes(o.code.length),
+            gzip: prettyBytes(await gzipSize(o.code)),
+            brotli: prettyBytes(await brotliSize(o.code)),
+          };
+        })
+    );
+
+    console.table(reports);
   }
 }
