@@ -65,11 +65,9 @@
     ]
   },
   "scripts": {
-    "build": "rimraf dist && tsc -b && oclif-dev manifest && oclif-dev readme",
-    "postbuild": "rimraf oclif.manifest.json",
+    "build": "rimraf dist && tsc -b && oclif-dev readme",
     "postpack": "rimraf oclif.manifest.json",
     "prepack": "rimraf dist && tsc -b && oclif-dev manifest && oclif-dev readme",
-    "test": "echo NO TESTS",
     "version": "oclif-dev readme && git add README.md"
   },
   "types": "dist/index.d.ts"
