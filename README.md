@@ -10,11 +10,11 @@ This is the monorepo hosting the `@known-as-bmf/store` ecosystem.
 - [`@known-as-bmf/store-obs`](https://github.com/known-as-bmf/store/tree/master/packages/store-obs) - Utility to create an Observable emiting when a @known-as-bmf/store instance changes.
 - [`@known-as-bmf/hookable`](https://github.com/known-as-bmf/store/tree/master/packages/hookable) - Function hooking utility.
 
-It uses [`pnpm`](https://pnpm.js.org/) as package manager, [`rush`](https://rushjs.io/) as monorepo manager and [`tsdx`](https://github.com/formium/tsdx) to build & test.
+It uses [`pnpm`](https://pnpm.js.org/) as package manager and [`rush`](https://rushjs.io/) as monorepo manager.
 
 Some useful commands:
 
-    $ npm i -g rush
+    $ npm i -g @microsoft/rush
     $ rush update --full
-    $ rush rebuild
-    $ rush test
+    $ rush rebuild [--verbose]
+    $ rush test [--verbose]

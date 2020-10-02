@@ -26,7 +26,7 @@ importers:
       '@testing-library/react': 11.0.4_react-dom@16.13.1+react@16.13.1
       '@testing-library/react-hooks': 3.4.2_1fb72ba09e79ce5bfd91e4d67e1015b7
       '@types/jest': 26.0.14
-      '@types/react': 16.9.49
+      '@types/react': 16.9.50
       '@types/react-dom': 16.9.8
       '@types/testing-library__react-hooks': 3.4.1
       eslint: 7.10.0
@@ -42,7 +42,7 @@ importers:
       '@testing-library/react': 11.0.4
       '@testing-library/react-hooks': 3.4.2
       '@types/jest': 26.0.14
-      '@types/react': 16.9.49
+      '@types/react': 16.9.50
       '@types/react-dom': 16.9.8
       '@types/testing-library__react-hooks': 3.4.1
       eslint: 7.10.0
@@ -1325,23 +1325,23 @@ packages:
       integrity: sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
   /@types/react-dom/16.9.8:
     dependencies:
-      '@types/react': 16.9.49
+      '@types/react': 16.9.50
     dev: true
     resolution:
       integrity: sha512-ykkPQ+5nFknnlU6lDd947WbQ6TE3NNzbQAkInC2EKY1qeYdTKp7onFusmYZb+ityzx2YviqT6BXSu+LyWWJwcA==
   /@types/react-test-renderer/16.9.3:
     dependencies:
-      '@types/react': 16.9.49
+      '@types/react': 16.9.50
     dev: true
     resolution:
       integrity: sha512-wJ7IlN5NI82XMLOyHSa+cNN4Z0I+8/YaLl04uDgcZ+W+ExWCmCiVTLT/7fRNqzy4OhStZcUwIqLNF7q+AdW43Q==
-  /@types/react/16.9.49:
+  /@types/react/16.9.50:
     dependencies:
       '@types/prop-types': 15.7.3
       csstype: 3.0.3
     dev: true
     resolution:
-      integrity: sha512-DtLFjSj0OYAdVLBbyjhuV9CdGVHCkHn2R+xr3XkBvK2rS1Y1tkc14XSGjYgm5Fjjr90AxH9tiSzc1pCFMGO06g==
+      integrity: sha512-kPx5YsNnKDJejTk1P+lqThwxN2PczrocwsvqXnjvVvKpFescoY62ZiM3TV7dH1T8lFhlHZF+PE5xUyimUwqEGA==
   /@types/resolve/1.17.1:
     dependencies:
       '@types/node': 14.11.2
@@ -3288,10 +3288,10 @@ packages:
       node: '>=8.12.0'
     resolution:
       integrity: sha512-SEQu7vl8KjNL2eoGBLF3+wAjpsNfA9XMlXAYj/3EdaNfAlxKthD1xjEQfGOUhllCGGJVNY34bRr6lPINhNjyZw==
-  /humanize-duration/3.23.1:
+  /humanize-duration/3.24.0:
     dev: false
     resolution:
-      integrity: sha512-aoOEkomAETmVuQyBx4E7/LfPlC9s8pAA/USl7vFRQpDjepo3aiyvFfOhtXSDqPowdBVPFUZ7onG/KyuolX0qPg==
+      integrity: sha512-B3udnqisaDeRsvUSb+5n2hjxhABI9jotB+i1IEhgHhguTeM5LxIUKoVIu7UpeyaPOygr/Fnv7UhOi45kYYG+tg==
   /hyperlinker/1.0.0:
     dev: true
     engines:
@@ -5065,7 +5065,7 @@ packages:
     dependencies:
       chalk: 2.4.2
       cli-spinners: 1.3.1
-      humanize-duration: 3.23.1
+      humanize-duration: 3.24.0
       log-update: 2.3.0
     dev: false
     resolution:
@@ -5417,7 +5417,7 @@ packages:
       jest-worker: 26.3.0
       rollup: 2.28.2
       serialize-javascript: 4.0.0
-      terser: 5.3.3
+      terser: 5.3.4
     dev: false
     peerDependencies:
       rollup: ^2.0.0
@@ -5943,7 +5943,7 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-un0FmiRUQNr5PJqy9kP7c40F5BOfpGlYTrxonDChEZB7pzZxRNp/bt+ymiy9/npwXya9KH99nJ/GXFIiUkYGFQ==
-  /terser/5.3.3:
+  /terser/5.3.4:
     dependencies:
       commander: 2.20.3
       source-map: 0.7.3
@@ -5953,7 +5953,7 @@ packages:
       node: '>=6.0.0'
     hasBin: true
     resolution:
-      integrity: sha512-vRQDIlD+2Pg8YMwVK9kMM3yGylG95EIwzBai1Bw7Ot4OBfn3VP1TZn3EWx4ep2jERN/AmnVaTiGuelZSN7ds/A==
+      integrity: sha512-dxuB8KQo8Gt6OVOeLg/rxfcxdNZI/V1G6ze1czFUzPeCFWZRtvZMgSzlZZ5OYBZ4HoG607F6pFPNLekJyV+yVw==
   /test-exclude/6.0.0:
     dependencies:
       '@istanbuljs/schema': 0.1.2
