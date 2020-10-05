@@ -30,13 +30,13 @@ export type HookSubscriber<H extends AnyFn> = (subscription: Hook<H>) => void;
 export const once: <H extends AnyFn>(fn: H) => Hook<H>;
 
 // @public
-export type TapInput<F extends AnyFn> = F extends (...args: infer A) => any ? (...args: A) => void : never;
+export type TapInput<F extends AnyFn> = F extends (...args: infer A) => unknown ? (...args: A) => void : never;
 
 // @public
 export type TapOutput<F extends AnyFn> = F extends (...args: any[]) => infer R ? (...args: [R]) => void : never;
 
 // @public
-export type TransformInput<F extends AnyFn> = F extends (...args: infer A) => any ? (...args: A) => A : never;
+export type TransformInput<F extends AnyFn> = F extends (...args: infer A) => unknown ? (...args: A) => A : never;
 
 // @public
 export type TransformOutput<F extends AnyFn> = F extends (...args: any[]) => infer R ? (...args: [R]) => R : never;

@@ -1229,9 +1229,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Pzh9O3sTK8V6I1olsXpCfj2k/ygO2q1X0vhhnDrEQyYLHZesWz+zMZMVcwXLCYf0U36EtmyYaFGPfXlTtDHe3A==
-  /@types/color-name/1.1.1:
-    resolution:
-      integrity: sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
   /@types/eslint-visitor-keys/1.0.0:
     dev: true
     resolution:
@@ -1643,14 +1640,13 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==
-  /ansi-styles/4.2.1:
+  /ansi-styles/4.3.0:
     dependencies:
-      '@types/color-name': 1.1.1
       color-convert: 2.0.1
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-9VGjrMsG1vePxcSweQsN20KY/c4zN0h9fLjqAbwbPfahM3t+NL+M9HC8xeXG2I8pX5NoamTGNuomEUFI7fcUjA==
+      integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==
   /ansicolors/0.3.2:
     dev: true
     resolution:
@@ -1820,7 +1816,7 @@ packages:
       node: '>= 10.14.2'
     resolution:
       integrity: sha512-B/hVMRv8Nh1sQ1a3EY8I0n4Y1Wty3NrR5ebOyVT302op+DOAau+xNEImGMsUWOC3++ZlMooCytKz+NgN8aKGbA==
-  /babel-preset-current-node-syntax/0.1.3_@babel+core@7.11.6:
+  /babel-preset-current-node-syntax/0.1.4_@babel+core@7.11.6:
     dependencies:
       '@babel/core': 7.11.6
       '@babel/plugin-syntax-async-generators': 7.8.4_@babel+core@7.11.6
@@ -1838,12 +1834,12 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0
     resolution:
-      integrity: sha512-uyexu1sVwcdFnyq9o8UQYsXwXflIh8LvrF5+cKrYam93ned1CStffB3+BEcsxGSgagoA3GEyjDqO4a/58hyPYQ==
+      integrity: sha512-5/INNCYhUGqw7VbVjT/hb3ucjgkVHKXY7lX3ZjlN4gm565VyFmJUrJ/h+h16ECVB38R/9SF6aACydpKMLZ/c9w==
   /babel-preset-jest/26.3.0_@babel+core@7.11.6:
     dependencies:
       '@babel/core': 7.11.6
       babel-plugin-jest-hoist: 26.2.0
-      babel-preset-current-node-syntax: 0.1.3_@babel+core@7.11.6
+      babel-preset-current-node-syntax: 0.1.4_@babel+core@7.11.6
     dev: false
     engines:
       node: '>= 10.14.2'
@@ -2023,7 +2019,7 @@ packages:
       integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==
   /chalk/3.0.0:
     dependencies:
-      ansi-styles: 4.2.1
+      ansi-styles: 4.3.0
       supports-color: 7.2.0
     engines:
       node: '>=8'
@@ -2031,7 +2027,7 @@ packages:
       integrity: sha512-4D3B6Wf41KOYRFdszmDqMCGq5VV/uMAB273JILmO+3jAlh8X4qDtdtgCR3fxtbLEMzSx22QdhnDcJvu2u1fVwg==
   /chalk/4.1.0:
     dependencies:
-      ansi-styles: 4.2.1
+      ansi-styles: 4.3.0
       supports-color: 7.2.0
     engines:
       node: '>=10'
@@ -2103,7 +2099,7 @@ packages:
       '@oclif/linewrap': 1.0.0
       '@oclif/screen': 1.0.4
       ansi-escapes: 4.3.1
-      ansi-styles: 4.2.1
+      ansi-styles: 4.3.0
       cardinal: 2.1.1
       chalk: 4.1.0
       clean-stack: 3.0.0
@@ -2826,7 +2822,7 @@ packages:
   /expect/26.4.2:
     dependencies:
       '@jest/types': 26.3.0
-      ansi-styles: 4.2.1
+      ansi-styles: 4.3.0
       jest-get-type: 26.3.0
       jest-matcher-utils: 26.4.2
       jest-message-util: 26.3.0
@@ -4649,7 +4645,7 @@ packages:
       is-wsl: 2.2.0
       semver: 7.3.2
       shellwords: 0.1.1
-      uuid: 8.3.0
+      uuid: 8.3.1
       which: 2.0.2
     dev: false
     optional: true
@@ -5039,7 +5035,7 @@ packages:
     dependencies:
       '@jest/types': 25.5.0
       ansi-regex: 5.0.0
-      ansi-styles: 4.2.1
+      ansi-styles: 4.3.0
       react-is: 16.13.1
     engines:
       node: '>= 8.3'
@@ -5049,7 +5045,7 @@ packages:
     dependencies:
       '@jest/types': 26.3.0
       ansi-regex: 5.0.0
-      ansi-styles: 4.2.1
+      ansi-styles: 4.3.0
       react-is: 16.13.1
     engines:
       node: '>= 10'
@@ -6231,12 +6227,12 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
-  /uuid/8.3.0:
+  /uuid/8.3.1:
     dev: false
     hasBin: true
     optional: true
     resolution:
-      integrity: sha512-fX6Z5o4m6XsXBdli9g7DtWgAx+osMsRRZFKma1mIUsLCz6vRvv+pz5VNbyu9UEDzpMWulZfvpgb/cmDXVulYFQ==
+      integrity: sha512-FOmRr+FmWEIG8uhZv6C2bTgEVXsHk08kE7mPlrBbEe+c3r9pjceVPgupIfNIhc4yx55H69OXANrUaSuu9eInKg==
   /v8-compile-cache/2.1.1:
     resolution:
       integrity: sha512-8OQ9CL+VWyt3JStj7HX7/ciTL2V3Rl1Wf5OL+SNTm0yK1KvtReVulksyeRnCANHHuUxHlQig+JJDlUhBt1NQDQ==
@@ -6388,7 +6384,7 @@ packages:
       integrity: sha512-uMTsj9rDb0/7kk1PbcbCcwvHUxp60fGDB/NNXpVa0Q+ic/e7y5+BwTxKfQ33VYgDppSwi/FBzpetYzo8s6tfbg==
   /wrap-ansi/6.2.0:
     dependencies:
-      ansi-styles: 4.2.1
+      ansi-styles: 4.3.0
       string-width: 4.2.0
       strip-ansi: 6.0.0
     dev: false
@@ -6398,7 +6394,7 @@ packages:
       integrity: sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==
   /wrap-ansi/7.0.0:
     dependencies:
-      ansi-styles: 4.2.1
+      ansi-styles: 4.3.0
       string-width: 4.2.0
       strip-ansi: 6.0.0
     engines:
