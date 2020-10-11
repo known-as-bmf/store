@@ -26,11 +26,9 @@ export interface ProjectContext {
   };
   readonly resolve: {
     fromRoot(path: string): string;
-    fromRoot(path: string | undefined): string | undefined;
-    fromRoot(path: undefined): undefined;
+    fromRoot(path?: string): string | undefined;
     fromCwd(path: string): string;
-    fromCwd(path: string | undefined): string | undefined;
-    fromCwd(path: undefined): undefined;
+    fromCwd(path?: string): string | undefined;
   };
   /**
    * If path is absolute: require the file.
@@ -39,23 +37,20 @@ export interface ProjectContext {
    */
   readonly require: {
     <T>(path: string): T | never;
-    <T>(path: string | undefined): T | undefined | never;
-    (path: undefined): undefined;
+    <T>(path?: string): T | undefined | never;
   } & {
     /**
      * Require a relative path from the root of the project (where the package.json is).
      * @param path - Relative path of the file to require.
      */
     fromRoot<T>(path: string): T | never;
-    fromRoot<T>(path: string | undefined): T | undefined | never;
-    fromRoot(path: undefined): undefined;
+    fromRoot<T>(path?: string): T | undefined | never;
     /**
      * Require a relative path from the current working dir.
      * @param path - Relative path of the file to require.
      */
     fromCwd<T>(path: string): T | never;
-    fromCwd<T>(path: string | undefined): T | undefined | never;
-    fromCwd(path: undefined): undefined;
+    fromCwd<T>(path?: string): T | undefined | never;
   };
 }
 
@@ -85,18 +80,13 @@ const assertValidPackageName = (name: string): void | never => {
 };
 
 function safeRequire<T>(path: string): T | never;
-function safeRequire<T>(path: string | undefined): T | undefined | never;
-function safeRequire(path: undefined): undefined;
-function safeRequire<T>(path: string | undefined): T | undefined | never {
+function safeRequire<T>(path?: string): T | undefined | never;
+function safeRequire<T>(path?: string): T | undefined | never {
   if (!path) {
     return undefined;
   }
 
-  try {
-    return require(path);
-  } catch (e) {
-    throw new Error(`The file '${path}' was not found.`);
-  }
+  return require(path);
 }
 
 export const createProjectContext = (cwd: string): ProjectContext => {
@@ -123,36 +113,32 @@ export const createProjectContext = (cwd: string): ProjectContext => {
   const root = dirname(packageJson);
 
   function resolveFromRoot(path: string): string;
-  function resolveFromRoot(path: string | undefined): string | undefined;
-  function resolveFromRoot(path: undefined): undefined;
-  function resolveFromRoot(path: string | undefined): string | undefined {
+  function resolveFromRoot(path?: string): string | undefined;
+  function resolveFromRoot(path?: string): string | undefined {
     return path ? resolve(root, path) : undefined;
   }
+
   function resolveFromCwd(path: string): string;
-  function resolveFromCwd(path: string | undefined): string | undefined;
-  function resolveFromCwd(path: undefined): undefined;
-  function resolveFromCwd(path: string | undefined): string | undefined {
+  function resolveFromCwd(path?: string): string | undefined;
+  function resolveFromCwd(path?: string): string | undefined {
     return path ? resolve(cwd, path) : undefined;
   }
 
   function requireFromRoot<T>(path: string): T | never;
-  function requireFromRoot<T>(path: string | undefined): T | undefined | never;
-  function requireFromRoot(path: undefined): undefined;
-  function requireFromRoot<T>(path: string | undefined): T | undefined | never {
+  function requireFromRoot<T>(path?: string): T | undefined | never;
+  function requireFromRoot<T>(path?: string): T | undefined | never {
     return safeRequire<T>(resolveFromRoot(path));
   }
 
   function requireFromCwd<T>(path: string): T | never;
-  function requireFromCwd<T>(path: string | undefined): T | undefined | never;
-  function requireFromCwd(path: undefined): undefined;
-  function requireFromCwd<T>(path: string | undefined): T | undefined | never {
+  function requireFromCwd<T>(path?: string): T | undefined | never;
+  function requireFromCwd<T>(path?: string): T | undefined | never {
     return safeRequire(resolveFromCwd(path));
   }
 
   function smartRequire<T>(path: string): T | never;
-  function smartRequire<T>(path: string | undefined): T | undefined | never;
-  function smartRequire(path: undefined): undefined;
-  function smartRequire<T>(path: string | undefined): T | undefined | never {
+  function smartRequire<T>(path?: string): T | undefined | never;
+  function smartRequire<T>(path?: string): T | undefined | never {
     if (!path) {
       return undefined;
     }

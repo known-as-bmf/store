@@ -6,17 +6,31 @@ import sourceMaps from 'rollup-plugin-sourcemaps';
 import json from '@rollup/plugin-json';
 import { terser } from 'rollup-plugin-terser';
 import del from 'rollup-plugin-delete';
+import globby from 'globby';
 
 import { ProjectContext } from '../utils/project';
 import { BuildConfiguration } from '../types';
 
-export const createRollupConfig = (
+const createBaseRollupConfig = (
   project: ProjectContext,
   build: BuildConfiguration
 ): [InputOptions, OutputOptions[]] => {
   const { dependencies, peerDependencies } = require(project.files.packageJson);
 
-  const input = project.resolve.fromRoot(build.entry);
+  // todo: glob match on input
+  // if single file, name output with package name
+  // if multiple, use file name
+  const input = globby.sync(build.entry, {
+    cwd: project.directories.root,
+    absolute: true,
+  });
+
+  if (input.length === 0) {
+    throw new Error('No entry file found.');
+  }
+  // const hasMultipleEntries = input.length > 1;
+
+  // const input = project.resolve.fromRoot(build.entry);
   const external = Object.keys({ ...dependencies, ...peerDependencies });
   const outputDir = project.resolve.fromRoot(build.output);
 
@@ -49,7 +63,8 @@ export const createRollupConfig = (
         }),
         commonjs(),
         nodeResolve({
-          browser: true,
+          browser: false,
+          preferBuiltins: true,
           rootDir: project.directories.root,
           extensions: ['.mjs', '.js', '.jsx', '.json', '.node'],
         }),
@@ -70,18 +85,21 @@ export const createRollupConfig = (
         return [
           {
             ...baseOutput,
-            entryFileNames: `${project.meta.name}.${format}.js`,
+            // entryFileNames: `${project.meta.name}.${format}.js`,
+            entryFileNames: `[name].${format}.js`,
           },
         ];
       } else {
         return [
           {
             ...baseOutput,
-            entryFileNames: `${project.meta.name}.${format}.development.js`,
+            // entryFileNames: `${project.meta.name}.${format}.development.js`,
+            entryFileNames: `[name].${format}.development.js`,
           },
           {
             ...baseOutput,
-            entryFileNames: `${project.meta.name}.${format}.production.min.js`,
+            // entryFileNames: `${project.meta.name}.${format}.production.min.js`,
+            entryFileNames: `[name].${format}.production.min.js`,
             plugins: [
               terser({
                 format: { comments: false },
@@ -98,4 +116,17 @@ export const createRollupConfig = (
       }
     }),
   ];
+};
+
+export const createRollupConfig = (
+  project: ProjectContext,
+  build: BuildConfiguration
+): [InputOptions, OutputOptions[]] => {
+  let config = createBaseRollupConfig(project, build);
+
+  if (build.rollup) {
+    config = build.rollup(config);
+  }
+
+  return config;
 };

@@ -1,5 +1,4 @@
-import { string } from '@oclif/command/lib/flags';
-import { Command } from '@oclif/command';
+import { Command, flags } from '@oclif/command';
 import { Input } from '@oclif/parser';
 import { PrettyPrintableError } from '@oclif/errors';
 import { ProgressEstimator } from 'progress-estimator';
@@ -13,7 +12,7 @@ import { createProgressEstimator } from './utils/progress-estimator';
 const commandInput: Input<{
   tscli: string | undefined;
 }> = {
-  flags: { tscli: string({ description: 'tscli configuration file.' }) },
+  flags: { tscli: flags.string({ description: 'tscli configuration file.' }) },
   strict: false,
 };
 
@@ -49,6 +48,7 @@ export abstract class TscliCommand extends Command {
       flags.tscli || this.project.files.tscliConfigFile
     );
 
+    console.table(tscli);
     checkTscliConfiguration(tscli);
 
     this.tscli = tscli;

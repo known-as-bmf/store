@@ -31,6 +31,7 @@ export default class BuildCommand extends TscliCommand {
   public static flags = {
     entry: flags.string({
       description: `The entry point of your code [default: '${defaults.entry}']`,
+      multiple: true,
     }),
     format: flags.string({
       description: `The JS format(s) to output [default: ${defaults.format}]`,

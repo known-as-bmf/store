@@ -1,4 +1,4 @@
-import { string } from '@oclif/command/lib/flags';
+import { flags } from '@oclif/command';
 import { run } from 'jest';
 
 import { TscliCommand } from '../tscli-command';
@@ -15,7 +15,7 @@ export default class TestCommand extends TscliCommand {
 
   // special case for config
   public static flags = {
-    config: string({ char: 'c', hidden: true }),
+    config: flags.string({ char: 'c', hidden: true }),
   };
 
   public async run(): Promise<void> {

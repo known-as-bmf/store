@@ -1,4 +1,4 @@
-import { flags } from '@oclif/command/lib';
+import { flags } from '@oclif/command';
 import { IFlag } from '@oclif/command/lib/flags';
 import { ESLint } from 'eslint';
 
