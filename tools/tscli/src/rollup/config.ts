@@ -7,6 +7,7 @@ import json from '@rollup/plugin-json';
 import { terser } from 'rollup-plugin-terser';
 import del from 'rollup-plugin-delete';
 import globby from 'globby';
+import builtins from 'builtin-modules';
 
 import { ProjectContext } from '../utils/project';
 import { BuildConfiguration } from '../types';
@@ -17,9 +18,6 @@ const createBaseRollupConfig = (
 ): [InputOptions, OutputOptions[]] => {
   const { dependencies, peerDependencies } = require(project.files.packageJson);
 
-  // todo: glob match on input
-  // if single file, name output with package name
-  // if multiple, use file name
   const input = globby.sync(build.entry, {
     cwd: project.directories.root,
     absolute: true,
@@ -28,10 +26,14 @@ const createBaseRollupConfig = (
   if (input.length === 0) {
     throw new Error('No entry file found.');
   }
-  // const hasMultipleEntries = input.length > 1;
 
-  // const input = project.resolve.fromRoot(build.entry);
-  const external = Object.keys({ ...dependencies, ...peerDependencies });
+  const external = [
+    // ignore builtins (fs, path, os, ...)
+    ...builtins,
+    // ignore deps and peer deps
+    ...Object.keys({ ...dependencies, ...peerDependencies }),
+  ];
+
   const outputDir = project.resolve.fromRoot(build.output);
 
   return [
@@ -62,13 +64,13 @@ const createBaseRollupConfig = (
             build.output,
           ],
         }),
-        commonjs(),
         nodeResolve({
-          browser: false,
-          preferBuiltins: true,
+          // browser: false,
+          // preferBuiltins: true,
           rootDir: project.directories.root,
           extensions: ['.mjs', '.js', '.jsx', '.json', '.node'],
         }),
+        commonjs(),
         sourceMaps(),
       ],
       treeshake: { propertyReadSideEffects: true },
