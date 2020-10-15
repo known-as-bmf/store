@@ -47,9 +47,9 @@ USAGE
   $ tscli build
 
 OPTIONS
-  --entry=entry     The entry point of your code [default: 'src/index.ts']
-  --format=cjs|esm  The JS format(s) to output [default: cjs,esm]
-  --output=output   Destination folder for the JS output [default: 'dist']
+  --entry=entry    The entry point of your code.
+  --format=cjs|es  The JS format(s) to output.
+  --output=output  Destination folder for the JS output.
 ```
 
 ## `tscli help [COMMAND]`
@@ -99,8 +99,8 @@ USAGE
   $ tscli watch
 
 OPTIONS
-  --entry=entry     The entry point of your code [default: 'src/index.ts']
-  --format=cjs|esm  The JS format(s) to output [default: cjs,esm]
-  --output=output   Destination folder for the JS output [default: 'dist']
+  --entry=entry    The entry point of your code.
+  --format=cjs|es  The JS format(s) to output.
+  --output=output  Destination folder for the JS output.
 ```
 <!-- commandsstop -->

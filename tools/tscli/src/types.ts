@@ -3,54 +3,79 @@ import {
   assert,
   enums,
   object,
-  optional,
-  partial,
   string,
   StructType,
   union,
   func,
   type,
   dynamic,
-  boolean,
+  Struct,
+  intersection,
+  record,
+  any,
+  defaulted,
+  coerce,
 } from 'superstruct';
 
-// eslint-disable-next-line @rushstack/typedef-var
-const outputKind = enums(['cjs', 'esm']);
+import { identity } from './utils/function';
 
 // eslint-disable-next-line @rushstack/typedef-var
-const outputDefinition = type({
-  format: outputKind,
-  minify: optional(boolean()),
-});
+const outputKind = enums(['cjs', 'es']);
+export type OutputKind = StructType<typeof outputKind>;
 
 // eslint-disable-next-line @rushstack/typedef-var
-const test = dynamic<
+const outputDefinition = intersection([
+  type({ format: outputKind }),
+  record(string(), any()),
+]);
+export type OutputDefinition = StructType<typeof outputDefinition>;
+
+// eslint-disable-next-line @rushstack/typedef-var
+const format = dynamic<
   StructType<typeof outputKind> | StructType<typeof outputDefinition>
->((value, ctx): any => {
-  if (typeof value === 'string') {
-    return outputKind;
-  } else if (typeof value === 'object' && !Array.isArray(value)) {
-    return outputDefinition;
-  } else {
-    ctx.fail();
-    return union([outputKind, outputDefinition]);
+>(
+  (value, ctx): Struct<any> => {
+    if (typeof value === 'string') {
+      return outputKind;
+    } else if (typeof value === 'object' && !Array.isArray(value)) {
+      return outputDefinition;
+    } else {
+      ctx.fail();
+      return union([outputKind, outputDefinition]);
+    }
   }
-});
+);
 
 // eslint-disable-next-line @rushstack/typedef-var
 const BuildConfigurationStruct = object({
   entry: union([string(), array(string())]),
-  format: array(outputKind),
+  format: array(outputDefinition),
   output: string(),
-  rollup: optional(func()),
-  test: array(test),
+  rollup: func(),
 });
 
 // eslint-disable-next-line @rushstack/typedef-var
-const TscliConfigurationStruct = optional(
+const TscliConfigurationStruct = defaulted(
   object({
-    build: optional(partial(BuildConfigurationStruct)),
-  })
+    build: defaulted(
+      object({
+        entry: defaulted(union([string(), array(string())]), 'src/index.ts'),
+        format: defaulted(array(format), [
+          { format: 'es', entryFileNames: '[name].[format].js' },
+          { format: 'cjs', entryFileNames: '[name].[format].js' },
+          {
+            format: 'cjs',
+            minify: true,
+            entryFileNames: '[name].[format].min.js',
+          },
+        ]),
+        output: defaulted(string(), 'dist'),
+        rollup: defaulted(func(), () => identity),
+      }),
+      {}
+    ),
+  }),
+  {}
 );
 
 export type BuildConfiguration = StructType<typeof BuildConfigurationStruct>;
@@ -59,24 +84,10 @@ export type TscliConfiguration = StructType<typeof TscliConfigurationStruct>;
 export function checkBuildConfiguration(
   input: unknown
 ): asserts input is BuildConfiguration {
-  try {
-    assert(input, BuildConfigurationStruct);
-  } catch (e) {
-    console.table(e);
-    throw e;
-  }
+  //coerce(input, BuildConfigurationStruct);
+  assert(input, BuildConfigurationStruct);
 }
 
-export function checkTscliConfiguration(
-  input: unknown
-): asserts input is TscliConfiguration {
-  try {
-    assert(input, TscliConfigurationStruct);
-  } catch (e) {
-    console.table(e);
-    for (const f of e.failures()) {
-      console.table(f);
-    }
-    throw e;
-  }
+export function coerceTscliConfiguration(input: unknown): TscliConfiguration {
+  return coerce(input, TscliConfigurationStruct);
 }

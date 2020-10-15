@@ -21,8 +21,8 @@
     "dist",
     "src"
   ],
-  "main": "dist/hookable.cjs.development.js",
-  "module": "dist/hookable.esm.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
   "typings": "dist/index.d.ts",
   "scripts": {
     "start": "",

@@ -1,4 +1,5 @@
 import { Command, flags } from '@oclif/command';
+import { IConfig } from '@oclif/config';
 import { Input } from '@oclif/parser';
 import { PrettyPrintableError } from '@oclif/errors';
 import { ProgressEstimator } from 'progress-estimator';
@@ -6,7 +7,7 @@ import { ProgressEstimator } from 'progress-estimator';
 import { createProjectContext, ProjectContext } from './utils/project';
 import { cwd, setEnvironment } from './utils/process';
 import { formatError } from './utils/error';
-import { checkTscliConfiguration, TscliConfiguration } from './types';
+import { coerceTscliConfiguration, TscliConfiguration } from './types';
 import { createProgressEstimator } from './utils/progress-estimator';
 
 const commandInput: Input<{
@@ -25,41 +26,41 @@ export abstract class TscliCommand extends Command {
   /**
    * tscli configuration loaded from config file or argv tscli parameter.
    */
-  protected tscli: TscliConfiguration | undefined = undefined;
+  protected tscli: TscliConfiguration;
 
   /**
    * project context.
    */
   protected project: ProjectContext = project;
 
+  /**
+   * progress estimator instance.
+   */
   protected progress: ProgressEstimator = progress;
 
-  public async init(): Promise<void> {
+  public constructor(argv: string[], config: IConfig) {
+    super(argv, config);
+
     const { env } = this.ctor as typeof TscliCommand;
 
     if (env) {
       setEnvironment(env);
     }
 
-    const { flags, argv } = this.parse(commandInput);
+    const { flags, argv: parsedArgv } = this.parse(commandInput);
 
-    const tscli = this.project.require(
+    const tscliFile = this.project.require<TscliConfiguration>(
       // command line param has precedence
       flags.tscli || this.project.files.tscliConfigFile
     );
 
-    console.table(tscli);
-    checkTscliConfiguration(tscli);
-
-    this.tscli = tscli;
+    this.tscli = coerceTscliConfiguration(tscliFile);
 
     if (flags.tscli) {
       // command line param --tscli was present
       // child commands are not expecting it -> remove it from args
-      this.argv = argv;
+      this.argv = parsedArgv;
     }
-
-    return super.init();
   }
 
   public error(

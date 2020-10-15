@@ -15,13 +15,13 @@ import { TscliCommand } from '../tscli-command';
 
 import { createRollupConfig } from '../rollup/config';
 import { sequence } from '../utils/promise';
-import { BuildConfiguration, checkBuildConfiguration } from '../types';
-
-const defaults: BuildConfiguration = {
-  entry: 'src/index.ts',
-  format: ['cjs', 'esm'],
-  output: 'dist',
-};
+import {
+  BuildConfiguration,
+  checkBuildConfiguration,
+  OutputDefinition,
+  OutputKind,
+  TscliConfiguration,
+} from '../types';
 
 export default class BuildCommand extends TscliCommand {
   public static env = 'production';
@@ -30,19 +30,47 @@ export default class BuildCommand extends TscliCommand {
 
   public static flags = {
     entry: flags.string({
-      description: `The entry point of your code [default: '${defaults.entry}']`,
+      description: `The entry point of your code.`,
       multiple: true,
     }),
     format: flags.string({
-      description: `The JS format(s) to output [default: ${defaults.format}]`,
+      description: `The JS format(s) to output.`,
       type: 'option',
-      options: ['cjs', 'esm'],
+      options: ['cjs', 'es'],
       multiple: true,
-    }) as flags.IOptionFlag<('cjs' | 'esm')[]>,
+    }) as flags.IOptionFlag<('cjs' | 'es')[]>,
     output: flags.string({
-      description: `Destination folder for the JS output [default: '${defaults.output}']`,
+      description: `Destination folder for the JS output.`,
     }),
   };
+
+  private _normalizeFormat(
+    format: OutputKind | OutputDefinition
+  ): OutputDefinition {
+    if (typeof format === 'string') {
+      return { format };
+    } else {
+      return format;
+    }
+  }
+
+  private _normalizeBuildConfig(
+    tscli: TscliConfiguration,
+    args: {
+      entry?: string[];
+      format?: ('cjs' | 'es')[];
+      output?: string | undefined;
+    }
+  ): BuildConfiguration {
+    return {
+      entry: args.entry ? args.entry : tscli.build.entry,
+      format: (args.format ? args.format : tscli.build.format).map(
+        this._normalizeFormat
+      ),
+      output: args.output ? args.output : tscli.build.output,
+      rollup: tscli.build.rollup,
+    };
+  }
 
   private _build(inputOptions: InputOptions): Promise<RollupBuild> {
     return this.progress(rollup(inputOptions), 'Building code', {
@@ -64,11 +92,7 @@ export default class BuildCommand extends TscliCommand {
   public async run(): Promise<void> {
     const { flags: cliBuildConfig } = this.parse(BuildCommand);
 
-    const config: Partial<BuildConfiguration> = {
-      ...defaults,
-      ...(this.tscli && this.tscli.build),
-      ...cliBuildConfig,
-    };
+    const config = this._normalizeBuildConfig(this.tscli, cliBuildConfig);
 
     checkBuildConfiguration(config);
 

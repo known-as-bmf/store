@@ -22,8 +22,8 @@
     "dist",
     "src"
   ],
-  "main": "dist/store.cjs.development.js",
-  "module": "dist/store.esm.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
   "typings": "dist/index.d.ts",
   "scripts": {
     "start": "tscli watch",

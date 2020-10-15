@@ -24,8 +24,8 @@
     "dist",
     "src"
   ],
-  "main": "dist/store-obs.cjs.development.js",
-  "module": "dist/store-obs.esm.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
   "typings": "dist/index.d.ts",
   "scripts": {
     "start": "",

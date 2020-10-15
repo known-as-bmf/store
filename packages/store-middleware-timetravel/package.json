@@ -26,8 +26,8 @@
     "dist",
     "src"
   ],
-  "main": "dist/store-middleware-timetravel.cjs.development.js",
-  "module": "dist/store-middleware-timetravel.esm.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
   "typings": "dist/index.d.ts",
   "scripts": {
     "start": "",

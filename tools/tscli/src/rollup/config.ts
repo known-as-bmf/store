@@ -43,6 +43,7 @@ const createBaseRollupConfig = (
         json(),
         typescript({
           tsconfig: project.files.tsConfigJson,
+          noEmitOnError: true,
           outDir: outputDir,
           target: 'esnext',
           // see: https://github.com/rollup/plugins/issues/287
@@ -73,33 +74,21 @@ const createBaseRollupConfig = (
       treeshake: { propertyReadSideEffects: true },
     },
     build.format.flatMap((format) => {
-      const baseOutput: OutputOptions = {
+      const { minify, ...userOutput } = format;
+
+      const output: OutputOptions = {
         name: project.meta.fullName,
-        format,
         globals: { react: 'React', 'react-native': 'ReactNative' },
         dir: outputDir,
         sourcemap: true,
+        ...userOutput,
       };
 
-      if (format === 'esm') {
+      if (minify) {
         return [
           {
-            ...baseOutput,
+            ...output,
             // entryFileNames: `${project.meta.name}.${format}.js`,
-            entryFileNames: `[name].${format}.js`,
-          },
-        ];
-      } else {
-        return [
-          {
-            ...baseOutput,
-            // entryFileNames: `${project.meta.name}.${format}.development.js`,
-            entryFileNames: `[name].${format}.development.js`,
-          },
-          {
-            ...baseOutput,
-            // entryFileNames: `${project.meta.name}.${format}.production.min.js`,
-            entryFileNames: `[name].${format}.production.min.js`,
             plugins: [
               terser({
                 format: { comments: false },
@@ -114,6 +103,8 @@ const createBaseRollupConfig = (
           },
         ];
       }
+
+      return output;
     }),
   ];
 };
@@ -122,11 +113,7 @@ export const createRollupConfig = (
   project: ProjectContext,
   build: BuildConfiguration
 ): [InputOptions, OutputOptions[]] => {
-  let config = createBaseRollupConfig(project, build);
+  const config = createBaseRollupConfig(project, build);
 
-  if (build.rollup) {
-    config = build.rollup(config);
-  }
-
-  return config;
+  return build.rollup(config);
 };

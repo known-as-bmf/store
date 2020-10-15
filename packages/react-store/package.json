@@ -24,8 +24,8 @@
     "dist",
     "src"
   ],
-  "main": "dist/react-store.cjs.development.js",
-  "module": "dist/react-store.esm.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
   "typings": "dist/index.d.ts",
   "scripts": {
     "start": "",
@@ -39,7 +39,7 @@
     "@known-as-bmf/eslint-config-bmf": "workspace:*",
     "@known-as-bmf/toolchain": "workspace:*",
     "@known-as-bmf/store": "workspace:^3.0.0",
-    "@testing-library/react": "11.0.4",
+    "@testing-library/react": "11.1.0",
     "@testing-library/react-hooks": "3.4.2",
     "@types/jest": "26.0.14",
     "@types/react": "16.9.52",
@@ -48,7 +48,7 @@
     "eslint": "7.11.0",
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0",
-    "react-test-renderer": "16.13.1",
+    "react-test-renderer": "16.14.0",
     "tslib": "2.0.3",
     "typescript": "4.0.3"
   },
