@@ -2,7 +2,10 @@ import { Middleware } from './types';
 
 /**
  * Compose middlewares from right to left.
- * @param middlewares Middlewares to compose.
+ *
+ * @param middlewares - Middlewares to compose.
+ *
+ * @public
  */
 export const pipeMiddlewares = <S>(
   ...middlewares: Middleware<S>[]
@@ -10,7 +13,10 @@ export const pipeMiddlewares = <S>(
 
 /**
  * Compose middlewares from left to right.
- * @param middlewares Middlewares to compose.
+ *
+ * @param middlewares - Middlewares to compose.
+ *
+ * @public
  */
 export const composeMiddlewares = <S>(
   ...middlewares: Middleware<S>[]

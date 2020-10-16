@@ -8,6 +8,13 @@ import {
   TapOutput,
 } from './types';
 
+/**
+ * Setup a subscription and save it to provided `Map`.
+ *
+ * @param map - The map to save the subscription to.
+ *
+ * @internal
+ */
 const hookInto = <H extends AnyFn>(map: Map<symbol, H>) => (
   subscription: Hook<H>
 ) => {
@@ -20,6 +27,13 @@ const hookInto = <H extends AnyFn>(map: Map<symbol, H>) => (
   map.set(symbol, subscription(unsubscribe));
 };
 
+/**
+ * Create a hookable function.
+ *
+ * @param fn - The function to make hookable.
+ *
+ * @public
+ */
 export function createHookable<F extends AnyFn>(fn: F): F & Hooks<F> {
   const transformInput = new Map<symbol, TransformInput<F>>();
   const enter = new Map<symbol, TapInput<F>>();

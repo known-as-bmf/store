@@ -11,22 +11,38 @@ import {
   Middleware,
 } from './types';
 
-// Internal symbols used by the store instance.
 /**
  * Current subscriptions to store changes.
+ *
+ * @internal
  */
-const SUBSCRIPTIONS = Symbol();
+const SUBSCRIPTIONS: unique symbol = Symbol();
+
 /**
  * Current state of the store.
+ *
+ * @internal
  */
-const STATE = Symbol();
+const STATE: unique symbol = Symbol();
+
 /**
  * State transformation (middleware).
+ *
+ * @internal
  */
-const SET_STATE = Symbol();
+const SET_STATE: unique symbol = Symbol();
+
+/**
+ * Internal subscription type.
+ *
+ * @internal
+ */
+type Subscription<S, R> = [Selector<S, R>, SubscriptionCallback<S>];
 
 /**
  * The store class.
+ *
+ * @internal
  */
 class StoreImpl<S> implements Store<S> {
   public declare [SUBSCRIPTIONS]: Set<Subscription<S, unknown>>;
@@ -35,39 +51,61 @@ class StoreImpl<S> implements Store<S> {
 }
 
 /**
- * Internal subscription type.
- */
-type Subscription<S, R> = [Selector<S, R>, SubscriptionCallback<S>];
-
-/**
  * Check if a value is a Store instance.
- * @param input The value to check.
+ *
+ * @param input - The value to check.
+ *
+ * @internal
  */
 function isStore<S = unknown>(input: unknown): input is StoreImpl<S> {
   return input instanceof StoreImpl;
 }
 
+/**
+ * Function to assert that the store is a valid store instance.
+ *
+ * @param store - The store to assert.
+ *
+ * @internal
+ */
 function assertStore<S>(store: Store<S>): asserts store is StoreImpl<S> {
   if (!isStore(store)) {
     throw new TypeError(errors.invalidStore);
   }
 }
 
+/**
+ * Get the current value of a store.
+ *
+ * @param store - The store.
+ *
+ * @internal
+ */
 function getState<S>(store: StoreImpl<S>): S {
-  const { [STATE]: state } = store;
-  return state;
+  return store[STATE];
 }
 
+/**
+ * Set the current value of a store.
+ *
+ * @param store - The store.
+ * @param state - The new state.
+ *
+ * @internal
+ */
 function setState<S>(store: StoreImpl<S>, state: S): void | never {
   store[SET_STATE](state);
 }
 
 /**
  * Notify all subscribers to the store that the state has changed.
- * If a selector was provises at subscription,
+ * If a selector was provided when subscribing,
  * only notify if the desired value has changed.
- * @param store The store instance.
- * @param event The change event.
+ *
+ * @param store - The store instance.
+ * @param event - The change event.
+ *
+ * @internal
  */
 function notifySubscribers<S>(
   store: StoreImpl<S>,
@@ -81,10 +119,13 @@ function notifySubscribers<S>(
 }
 
 /**
- * Creates a store.
- * @param initialState The initial value of the state.
- * @param middleware Middleware to use for this store. You can compose multiple
+ * Create a store.
+ *
+ * @param initialState - The initial value of the state.
+ * @param middleware - Middleware to use for this store. You can compose multiple
  * middlewares with `composeMiddlewares` and `pipeMiddlewares`.
+ *
+ * @public
  */
 export function of<S>(initialState: S, middleware?: Middleware<S>): Store<S> {
   const store: StoreImpl<S> = Object.defineProperties(
@@ -123,9 +164,13 @@ export function of<S>(initialState: S, middleware?: Middleware<S>): Store<S> {
 }
 
 /**
- * Returns the current state of a store.
- * @param store The store you want to get the current state from.
- * @throws {TypeError} if the store is not a correct `Store` instance.
+ * Return the current state of a store.
+ *
+ * @param store - The store you want to get the current state from.
+ *
+ * @throws `TypeError` if the store is not a correct `Store` instance.
+ *
+ * @public
  */
 export function deref<S>(store: Store<S>): S {
   assertStore(store);
@@ -134,11 +179,14 @@ export function deref<S>(store: Store<S>): S {
 }
 
 /**
- * Changes the state of a store using a function.
- * @param store The store of which you want to change the state.
- * @param mutationFn The function used to compute the value of the future state.
- * @throws {TypeError} if the store is not a correct `Store` instance.
- * @throws {Error} if the new state does not pass validation.
+ * Change the state of a store using a function.
+ *
+ * @param store - The store of which you want to change the state.
+ * @param mutationFn - The function used to compute the value of the future state.
+ *
+ * @throws `TypeError` if the store is not a correct `Store` instance.
+ *
+ * @public
  */
 export function swap<S>(store: Store<S>, mutationFn: (current: S) => S): void {
   assertStore(store);
@@ -151,11 +199,14 @@ export function swap<S>(store: Store<S>, mutationFn: (current: S) => S): void {
 }
 
 /**
- * Changes the state of a store with a new one.
- * @param store The store of which you want to change the state.
- * @param current The new state.
- * @throws {TypeError} if the store is not a correct `Store` instance.
- * @throws {Error} if the new state does not pass validation.
+ * Change the state of a store with a new one.
+ *
+ * @param store - The store of which you want to change the state.
+ * @param current - The new state.
+ *
+ * @throws `TypeError` if the store is not a correct `Store` instance.
+ *
+ * @public
  */
 export function set<S>(store: Store<S>, current: S): void {
   assertStore(store);
@@ -167,23 +218,33 @@ export function set<S>(store: Store<S>, current: S): void {
 }
 
 /**
- * Subscribes to state changes.
- * @param store The store you want to subscribe to.
- * @param callback The function to call when the state changes.
+ * Subscribe to state changes.
+ *
+ * @param store - The store you want to subscribe to.
+ * @param callback - The function to call when the state changes.
+ *
  * @returns An unsubscribe function for this specific subscription.
- * @throws {TypeError} if the store is not a correct `Store` instance.
+ *
+ * @throws `TypeError` if the store is not a correct `Store` instance.
+ *
+ * @public
  */
 export function subscribe<S>(
   store: Store<S>,
   callback: SubscriptionCallback<S>
 ): () => void;
 /**
- * Subscribes to state changes.
- * @param store The store you want to subscribe to.
- * @param callback The function to call when the state changes.
- * @param selector The selector function, narrowing down the part of the state you want to subscribe to.
+ * Subscribe to state changes.
+ *
+ * @param store - The store you want to subscribe to.
+ * @param callback - The function to call when the state changes.
+ * @param selector - The selector function, narrowing down the part of the state you want to subscribe to.
+ *
  * @returns An unsubscribe function for this specific subscription.
- * @throws {TypeError} if the store is not a correct `Store` instance.
+ *
+ * @throws `TypeError` if the store is not a correct `Store` instance.
+ *
+ * @public
  */
 export function subscribe<S, R>(
   store: Store<S>,

@@ -1,20 +1,20 @@
 {
-  "name": "toolchain",
+  "name": "@known-as-bmf/toolchain",
   "version": "1.0.0",
   "author": "Julien Avert",
   "private": true,
   "scripts": {
-    "start": "",
-    "build": "",
-    "test": ""
+    "build": ""
   },
   "devDependencies": {
-    "@types/jest": "26.0.10",
+    "@known-as-bmf/tscli": "workspace:*",
+    "@microsoft/api-extractor": "7.10.4",
+    "@types/jest": "26.0.14",
     "jest-standard-reporter": "1.1.1",
-    "tsdx": "0.13.2",
-    "typescript": "3.9.7"
+    "typescript": "4.0.3"
   },
   "bin": {
-    "toolchain": "./node_modules/tsdx/dist/index.js"
+    "tscli": "./node_modules/@known-as-bmf/tscli/bin/run",
+    "api-extractor": "./node_modules/@microsoft/api-extractor/bin/api-extractor"
   }
 }

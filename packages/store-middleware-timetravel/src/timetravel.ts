@@ -3,16 +3,43 @@ import { Store, Middleware, set } from '@known-as-bmf/store';
 import { TimetravelOptions } from './types';
 import { errors } from './errors';
 
-const HISTORY = Symbol();
-const HISTORY_INDEX = Symbol();
-const IS_TIMETRAVELING = Symbol();
+/**
+ * Symbol used to reference the state history array.
+ *
+ * @internal
+ */
+const HISTORY: unique symbol = Symbol();
+/**
+ * Symbol used to reference the current index in the state history array.
+ *
+ * @internal
+ */
+const HISTORY_INDEX: unique symbol = Symbol();
+/**
+ * Symbol used to reference the fact that the current state change was due to a imetravel.
+ *
+ * @internal
+ */
+const IS_TIMETRAVELING: unique symbol = Symbol();
 
+/**
+ * Store object extension.
+ *
+ * @internal
+ */
 interface InternalStore<S> extends Store<S> {
   [HISTORY]: S[];
   [HISTORY_INDEX]: number;
   [IS_TIMETRAVELING]: boolean;
 }
 
+/**
+ * Function to assert that the store has been properly initialized.
+ *
+ * @param store - The store to assert.
+ *
+ * @internal
+ */
 function assertTimetravelStore<S>(
   store: Store<S>
 ): asserts store is InternalStore<S> {
@@ -21,6 +48,17 @@ function assertTimetravelStore<S>(
   }
 }
 
+/**
+ * Navigate the history by `offset` amount on the provided `store`.
+ *
+ * @remarks
+ * `offset` can be positive (undo) or negative (redo).
+ *
+ * @param store - The store object to navigate.
+ * @param offset - The distance to navigate.
+ *
+ * @internal
+ */
 function navigateHistory<S>(store: InternalStore<S>, offset: number): void {
   if (offset === 0) {
     // nothing to do boys
@@ -44,6 +82,13 @@ function navigateHistory<S>(store: InternalStore<S>, offset: number): void {
   set(store, store[HISTORY][futureIndex]);
 }
 
+/**
+ * Create a new timetravel middleware.
+ *
+ * @param options - Middleware options.
+ *
+ * @public
+ */
 export const timetravelMiddleware = <S>({
   depth = 1,
 }: TimetravelOptions = {}): Middleware<S> => (store, hooks) => {
@@ -77,8 +122,12 @@ export const timetravelMiddleware = <S>({
 
 /**
  * Returns the current state of a store and the available history (past and future).
- * @param store The store you want to get the current state from.
- * @throws {TypeError} if the store is not a correct `Store` instance or if you didn't pass the timetravel middleware during store construction.
+ *
+ * @param store - The store you want to get the current state from.
+ *
+ * @throws `TypeError` if the store is not a correct `Store` instance or if you didn't pass the timetravel middleware during store construction.
+ *
+ * @public
  */
 export function derefHistory<S>(
   store: Store<S>
@@ -95,13 +144,17 @@ export function derefHistory<S>(
 
 /**
  * Navigates back in the store history.
- * @param store The store of which you want to change the state.
- * @param steps The number of steps you want to take backwards. Default to 1.
- * @throws {TypeError} if the store is not a correct `Store` instance or if you didn't pass the timetravel middleware during store construction.
- * @throws {Error} if `steps` is less than 0.
- * @throws {Error} if you try to navigate out of bounds of the history.
+ *
+ * @param store - The store of which you want to change the state.
+ * @param steps - The number of steps you want to take backwards. Default to 1.
+ *
+ * @throws `TypeError` if the store is not a correct `Store` instance or if you didn't pass the timetravel middleware during store construction.
+ * @throws `Error` if `steps` is less than 0.
+ * @throws `Error` if you try to navigate out of bounds of the history.
+ *
+ * @public
  */
-export function undo<S>(store: Store<S>, steps = 1): void {
+export function undo<S>(store: Store<S>, steps: number = 1): void {
   assertTimetravelStore(store);
 
   if (steps < 0) {
@@ -113,13 +166,17 @@ export function undo<S>(store: Store<S>, steps = 1): void {
 
 /**
  * Navigates forward in the store history.
- * @param store The store of which you want to change the state.
- * @param steps The number of steps you want to take forward. Default to 1.
- * @throws {TypeError} if the store is not a correct `Store` instance or if you didn't pass the timetravel middleware during store construction.
- * @throws {Error} if `steps` is less than 0.
- * @throws {Error} if you try to navigate out of bounds of the history.
+ *
+ * @param store - The store of which you want to change the state.
+ * @param steps - The number of steps you want to take forward. Default to 1.
+ *
+ * @throws `TypeError` if the store is not a correct `Store` instance or if you didn't pass the timetravel middleware during store construction.
+ * @throws `Error` if `steps` is less than 0.
+ * @throws `Error` if you try to navigate out of bounds of the history.
+ *
+ * @public
  */
-export function redo<S>(store: Store<S>, steps = 1): void {
+export function redo<S>(store: Store<S>, steps: number = 1): void {
   assertTimetravelStore(store);
 
   if (steps < 0) {

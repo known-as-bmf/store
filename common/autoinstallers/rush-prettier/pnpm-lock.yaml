@@ -1,6 +1,6 @@
 dependencies:
-  prettier: 2.0.5
-  pretty-quick: 3.0.0_prettier@2.0.5
+  prettier: 2.1.2
+  pretty-quick: 3.1.0
 lockfileVersion: 5.1
 packages:
   /@types/color-name/1.1.1:
@@ -52,7 +52,7 @@ packages:
   /chalk/3.0.0:
     dependencies:
       ansi-styles: 4.2.1
-      supports-color: 7.1.0
+      supports-color: 7.2.0
     dev: false
     engines:
       node: '>=8'
@@ -249,14 +249,14 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==
-  /prettier/2.0.5:
+  /prettier/2.1.2:
     dev: false
     engines:
       node: '>=10.13.0'
     hasBin: true
     resolution:
-      integrity: sha512-7PtVymN48hGcO4fGjybyBSIWDsLU4H4XlvOHfq91pz9kkGlonzwTfYkaIEwiRg/dAJF9YlbsduBAgtYLi+8cFg==
-  /pretty-quick/3.0.0_prettier@2.0.5:
+      integrity: sha512-16c7K+x4qVlJg9rEbXl7HEGmQyZlG4R9AgP+oHKRMsMsuk8s+ATStlf1NpDqyBI1HpVyfjLOeMhH2LvuNvV5Vg==
+  /pretty-quick/3.1.0:
     dependencies:
       chalk: 3.0.0
       execa: 4.0.3
@@ -264,7 +264,6 @@ packages:
       ignore: 5.1.8
       mri: 1.1.6
       multimatch: 4.0.0
-      prettier: 2.0.5
     dev: false
     engines:
       node: '>=10.13'
@@ -272,7 +271,7 @@ packages:
     peerDependencies:
       prettier: '>=2.0.0'
     resolution:
-      integrity: sha512-oIXlGQUcUxt3XpoNfQECEWvH1Q9PtKfelF2pdp6UvC1CSQ5QcB7gUYKu0kuJGlm3LMBZzJaO/vbRkxA61pWlcg==
+      integrity: sha512-DtxIxksaUWCgPFN7E1ZZk4+Aav3CCuRdhrDSFZENb404sYMtuo9Zka823F+Mgeyt8Zt3bUiCjFzzWYE9LYqkmQ==
   /pump/3.0.0:
     dependencies:
       end-of-stream: 1.4.4
@@ -304,14 +303,14 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-BrpvfNAE3dcvq7ll3xVumzjKjZQ5tI1sEUIKr3Uoks0XUl45St3FlatVqef9prk4jRDzhW6WZg+3bk93y6pLjA==
-  /supports-color/7.1.0:
+  /supports-color/7.2.0:
     dependencies:
       has-flag: 4.0.0
     dev: false
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-oRSIpR8pxT1Wr2FquTNnGet79b3BWljqOuoW/h4oBhxJ/HUbX5nX6JSruTkvXDCFMwDPvsaTTbvMLKZWSy0R5g==
+      integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
   /which/2.0.2:
     dependencies:
       isexe: 2.0.0
@@ -326,5 +325,5 @@ packages:
     resolution:
       integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
 specifiers:
-  prettier: 2.0.5
-  pretty-quick: 3.0.0
+  prettier: 2.1.2
+  pretty-quick: 3.1.0

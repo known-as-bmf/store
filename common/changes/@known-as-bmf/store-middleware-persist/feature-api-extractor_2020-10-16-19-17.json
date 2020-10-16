@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@known-as-bmf/store-middleware-persist",
+      "comment": "change build tool and slightly change public api",
+      "type": "minor"
+    }
+  ],
+  "packageName": "@known-as-bmf/store-middleware-persist",
+  "email": "bmf.geekinside@gmail.com"
+}

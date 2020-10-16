@@ -69,4 +69,7 @@ common/autoinstallers/*/.npmrc
 **/.rush/temp/
 
 # dist folders
-dist
+**/dist
+
+# temp api-extractor
+**/temp

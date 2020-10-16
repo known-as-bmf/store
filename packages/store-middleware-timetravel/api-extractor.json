@@ -1,0 +1,3 @@
+{
+  "extends": "@known-as-bmf/toolchain/api-extractor.base.json"
+}

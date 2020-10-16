@@ -1,4 +1,9 @@
-export interface PersistOptions<S extends Record<string, unknown>> {
+/**
+ * Middleware options.
+ *
+ * @public
+ */
+export interface PersistOptions {
   /**
    * Which `Storage` instance to use for persistence.
    */
@@ -9,10 +14,12 @@ export interface PersistOptions<S extends Record<string, unknown>> {
   key: string;
   /**
    * list of properties to persist.
+   * This uses lodash {@link https://lodash.com/docs/4.17.15#pick | pick} under the hood, so you can use nested selectors such as 'prop1.prop2'.
    */
-  include?: (keyof S)[];
+  include?: string[];
   /**
    * list of properties to ignore.
+   * This uses lodash {@link https://lodash.com/docs/4.17.15#omit | omit} under the hood, so you can use nested selectors such as 'prop1.prop2'.
    */
-  exclude?: (keyof S)[];
+  exclude?: string[];
 }
