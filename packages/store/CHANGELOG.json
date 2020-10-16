@@ -1,0 +1,20 @@
+{
+  "name": "@known-as-bmf/store",
+  "entries": [
+    {
+      "version": "3.0.0",
+      "tag": "@known-as-bmf/store_v3.0.0",
+      "date": "Fri, 21 Aug 2020 14:45:56 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@known-as-bmf/hookable\" from `^3.0.0` to `^3.0.1`"
+          },
+          {
+            "comment": "Updating dependency \"@known-as-bmf/hookable\" from `^3.0.0` to `^3.0.1`"
+          }
+        ]
+      }
+    }
+  ]
+}

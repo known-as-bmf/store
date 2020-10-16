@@ -1,0 +1,17 @@
+{
+  "name": "@known-as-bmf/react-store",
+  "entries": [
+    {
+      "version": "3.0.1",
+      "tag": "@known-as-bmf/react-store_v3.0.1",
+      "date": "Fri, 21 Aug 2020 14:45:56 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "remove useless return"
+          }
+        ]
+      }
+    }
+  ]
+}
