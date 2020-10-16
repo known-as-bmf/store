@@ -14,16 +14,12 @@ export interface PersistOptions {
   key: string;
   /**
    * list of properties to persist.
-   * This uses lodash pick under the hood, so you can use nested selectors such as 'prop1.prop2'.
-   *
-   * @see https://lodash.com/docs/4.17.15#pick
+   * This uses lodash {@link https://lodash.com/docs/4.17.15#pick | pick} under the hood, so you can use nested selectors such as 'prop1.prop2'.
    */
   include?: string[];
   /**
    * list of properties to ignore.
-   * This uses lodash omit under the hood, so you can use nested selectors such as 'prop1.prop2'.
-   *
-   * @see https://lodash.com/docs/4.17.15#omit
+   * This uses lodash {@link https://lodash.com/docs/4.17.15#omit | omit} under the hood, so you can use nested selectors such as 'prop1.prop2'.
    */
   exclude?: string[];
 }
