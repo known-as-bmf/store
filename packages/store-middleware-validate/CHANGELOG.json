@@ -1,9 +1,9 @@
 {
-  "name": "@known-as-bmf/react-store",
+  "name": "@known-as-bmf/store-middleware-validate",
   "entries": [
     {
       "version": "4.0.0",
-      "tag": "@known-as-bmf/react-store_v4.0.0",
+      "tag": "@known-as-bmf/store-middleware-validate_v4.0.0",
       "date": "Fri, 16 Oct 2020 19:51:08 GMT",
       "comments": {
         "patch": [
@@ -19,7 +19,7 @@
         ],
         "major": [
           {
-            "comment": "update `useNewStore` implementation & typings"
+            "comment": "change middleware function name"
           }
         ],
         "dependency": [
@@ -28,18 +28,6 @@
           },
           {
             "comment": "Updating dependency \"@known-as-bmf/store\" from `^3.0.0` to `^3.0.1`"
-          }
-        ]
-      }
-    },
-    {
-      "version": "3.0.1",
-      "tag": "@known-as-bmf/react-store_v3.0.1",
-      "date": "Fri, 21 Aug 2020 14:45:56 GMT",
-      "comments": {
-        "patch": [
-          {
-            "comment": "remove useless return"
           }
         ]
       }

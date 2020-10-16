@@ -2,6 +2,34 @@
   "name": "@known-as-bmf/store-middleware-persist",
   "entries": [
     {
+      "version": "3.2.0",
+      "tag": "@known-as-bmf/store-middleware-persist_v3.2.0",
+      "date": "Fri, 16 Oct 2020 19:51:08 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add typedoc"
+          },
+          {
+            "comment": "bump deps"
+          }
+        ],
+        "minor": [
+          {
+            "comment": "change build tool and slightly change public api"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@known-as-bmf/store\" from `^3.0.0` to `^3.0.1`"
+          },
+          {
+            "comment": "Updating dependency \"@known-as-bmf/store\" from `^3.0.0` to `^3.0.1`"
+          }
+        ]
+      }
+    },
+    {
       "version": "3.1.0",
       "tag": "@known-as-bmf/store-middleware-persist_v3.1.0",
       "date": "Fri, 21 Aug 2020 14:45:56 GMT",
