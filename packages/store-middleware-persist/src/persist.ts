@@ -14,8 +14,8 @@ import { PersistOptions } from './types';
  */
 const pickPersistedProperties = <S extends Record<string, unknown>>(
   state: S,
-  include?: (keyof S)[],
-  exclude?: (keyof S)[]
+  include?: string[],
+  exclude?: string[]
 ): Partial<S> => {
   const includeProps = include ? include : Object.keys(state);
   const excludeProps = exclude ? exclude : [];
@@ -38,7 +38,7 @@ export const persistMiddleware = <S extends Record<string, unknown>>({
   storage = localStorage,
   include,
   exclude,
-}: PersistOptions<S>): Middleware<S> => (_, hooks) => {
+}: PersistOptions): Middleware<S> => (_, hooks) => {
   // this hook will only be called once, on store init (we unsubscribe after being fired once)
   hooks.transformState((unsubscribe) => (state) => {
     unsubscribe();
