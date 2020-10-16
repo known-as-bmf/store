@@ -1,6 +1,6 @@
 {
   "name": "@known-as-bmf/store-obs",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "author": "Julien Avert",
   "description": "Utility to create an Observable emiting when a @known-as-bmf/store instance changes.",
   "keywords": [
@@ -38,7 +38,7 @@
   "devDependencies": {
     "@known-as-bmf/eslint-config-bmf": "workspace:*",
     "@known-as-bmf/toolchain": "workspace:*",
-    "@known-as-bmf/store": "workspace:^3.0.0",
+    "@known-as-bmf/store": "workspace:^3.0.1",
     "@types/jest": "26.0.14",
     "eslint": "7.11.0",
     "rxjs": "^6.6.0",
@@ -46,7 +46,7 @@
     "typescript": "4.0.3"
   },
   "peerDependencies": {
-    "@known-as-bmf/store": "workspace:^3.0.0",
+    "@known-as-bmf/store": "workspace:^3.0.1",
     "rxjs": "^6.6.0"
   },
   "publishConfig": {
