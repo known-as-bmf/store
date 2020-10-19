@@ -21,7 +21,7 @@ export default class LintCommand extends TscliCommand {
     // argv will contain the rest of the cli arguments (the directories / files to lint)
     const { flags, argv } = this.parse(LintCommand);
 
-    const files = argv && argv.length ? argv : ['src', 'test'];
+    const files = argv && argv.length ? argv : this.tscli.lint.input;
 
     this.log(`Linting dir(s) / file(s): ${files.join(', ')}`);
 

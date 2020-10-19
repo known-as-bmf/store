@@ -34,6 +34,7 @@ export type OutputDefinition = StructType<typeof outputDefinition>;
 const format = dynamic<
   StructType<typeof outputKind> | StructType<typeof outputDefinition>
 >(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   (value, ctx): Struct<any> => {
     if (typeof value === 'string') {
       return outputKind;
@@ -72,6 +73,10 @@ const TscliConfigurationStruct = defaulted(
         output: defaulted(string(), 'dist'),
         rollup: defaulted(func(), () => identity),
       }),
+      {}
+    ),
+    lint: defaulted(
+      object({ input: defaulted(array(string()), ['src', 'test']) }),
       {}
     ),
   }),

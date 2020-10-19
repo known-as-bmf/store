@@ -9,4 +9,7 @@ module.exports = {
       },
     ],
   },
+  lint: {
+    input: ['src'],
+  },
 };

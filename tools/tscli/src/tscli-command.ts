@@ -71,6 +71,7 @@ export abstract class TscliCommand extends Command {
     input: string | Error,
     options?: { code?: string; exit?: number } & PrettyPrintableError
   ): never;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public error(input: string | Error, options?: any): void | never {
     return super.error(formatError(input), options);
   }

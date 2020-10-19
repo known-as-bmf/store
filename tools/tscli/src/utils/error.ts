@@ -1,5 +1,6 @@
 import { EOL } from 'os';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function formatError(error: any): string {
   if (typeof error === 'string') {
     return error;
