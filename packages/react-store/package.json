@@ -37,8 +37,8 @@
   },
   "devDependencies": {
     "@known-as-bmf/eslint-config-bmf": "1.0.1",
-    "@known-as-bmf/toolchain": "workspace:*",
     "@known-as-bmf/store": "workspace:^3.0.2",
+    "@known-as-bmf/toolchain": "workspace:*",
     "@testing-library/react": "11.1.0",
     "@testing-library/react-hooks": "3.4.2",
     "@types/jest": "26.0.15",
