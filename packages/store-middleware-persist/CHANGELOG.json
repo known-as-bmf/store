@@ -2,6 +2,26 @@
   "name": "@known-as-bmf/store-middleware-persist",
   "entries": [
     {
+      "version": "3.2.1",
+      "tag": "@known-as-bmf/store-middleware-persist_v3.2.1",
+      "date": "Wed, 21 Oct 2020 18:53:48 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "switch to external tscli"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@known-as-bmf/store\" from `^3.0.1` to `^3.0.2`"
+          },
+          {
+            "comment": "Updating dependency \"@known-as-bmf/store\" from `^3.0.1` to `^3.0.2`"
+          }
+        ]
+      }
+    },
+    {
       "version": "3.2.0",
       "tag": "@known-as-bmf/store-middleware-persist_v3.2.0",
       "date": "Fri, 16 Oct 2020 19:51:08 GMT",

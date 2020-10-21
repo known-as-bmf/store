@@ -1,6 +1,6 @@
 {
   "name": "@known-as-bmf/react-store",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "author": "Julien Avert",
   "description": "React hook to subscribe to a store from @known-as-bmf/store.",
   "keywords": [
@@ -38,7 +38,7 @@
   "devDependencies": {
     "@known-as-bmf/eslint-config-bmf": "1.0.1",
     "@known-as-bmf/toolchain": "workspace:*",
-    "@known-as-bmf/store": "workspace:^3.0.1",
+    "@known-as-bmf/store": "workspace:^3.0.2",
     "@testing-library/react": "11.1.0",
     "@testing-library/react-hooks": "3.4.2",
     "@types/jest": "26.0.15",
@@ -53,7 +53,7 @@
     "typescript": "4.0.3"
   },
   "peerDependencies": {
-    "@known-as-bmf/store": "workspace:^3.0.1",
+    "@known-as-bmf/store": "workspace:^3.0.2",
     "react": ">=16.8.0"
   },
   "publishConfig": {
