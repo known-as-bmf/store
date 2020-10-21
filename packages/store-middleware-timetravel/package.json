@@ -1,6 +1,6 @@
 {
   "name": "@known-as-bmf/store-middleware-timetravel",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "author": "Julien Avert",
   "description": "History / timetravel middleware for @known-as-bmf/store.",
   "keywords": [
@@ -39,15 +39,15 @@
   },
   "devDependencies": {
     "@known-as-bmf/eslint-config-bmf": "1.0.1",
+    "@known-as-bmf/store": "workspace:^3.0.2",
     "@known-as-bmf/toolchain": "workspace:*",
-    "@known-as-bmf/store": "workspace:^3.0.1",
     "@types/jest": "26.0.15",
     "eslint": "7.11.0",
     "tslib": "2.0.3",
     "typescript": "4.0.3"
   },
   "peerDependencies": {
-    "@known-as-bmf/store": "workspace:^3.0.1"
+    "@known-as-bmf/store": "workspace:^3.0.2"
   },
   "publishConfig": {
     "access": "public"
