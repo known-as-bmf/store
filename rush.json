@@ -471,16 +471,6 @@
       "packageName": "@known-as-bmf/toolchain",
       "projectFolder": "tools/toolchain",
       "shouldPublish": false
-    },
-    {
-      "packageName": "@known-as-bmf/tscli",
-      "projectFolder": "tools/tscli",
-      "shouldPublish": false
-    },
-    {
-      "packageName": "@known-as-bmf/eslint-config-bmf",
-      "projectFolder": "tools/eslint-config-bmf",
-      "shouldPublish": false
     }
   ]
 }

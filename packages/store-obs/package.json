@@ -36,10 +36,10 @@
     "doc": "api-extractor run --local --verbose"
   },
   "devDependencies": {
-    "@known-as-bmf/eslint-config-bmf": "workspace:*",
+    "@known-as-bmf/eslint-config-bmf": "1.0.1",
     "@known-as-bmf/toolchain": "workspace:*",
     "@known-as-bmf/store": "workspace:^3.0.1",
-    "@types/jest": "26.0.14",
+    "@types/jest": "26.0.15",
     "eslint": "7.11.0",
     "rxjs": "^6.6.0",
     "tslib": "2.0.3",
