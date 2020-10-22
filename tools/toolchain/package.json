@@ -7,7 +7,7 @@
     "build": ""
   },
   "devDependencies": {
-    "@known-as-bmf/tscli": "0.1.1",
+    "@known-as-bmf/tscli": "0.1.2",
     "@microsoft/api-extractor": "7.10.4",
     "@types/jest": "26.0.15",
     "jest-standard-reporter": "1.1.1",
