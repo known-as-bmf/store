@@ -2,6 +2,26 @@
   "name": "@known-as-bmf/store-obs",
   "entries": [
     {
+      "version": "3.0.3",
+      "tag": "@known-as-bmf/store-obs_v3.0.3",
+      "date": "Mon, 26 Oct 2020 19:29:45 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "bump deps"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@known-as-bmf/store\" from `^3.0.2` to `^3.0.3`"
+          },
+          {
+            "comment": "Updating dependency \"@known-as-bmf/store\" from `^3.0.2` to `^3.0.3`"
+          }
+        ]
+      }
+    },
+    {
       "version": "3.0.2",
       "tag": "@known-as-bmf/store-obs_v3.0.2",
       "date": "Wed, 21 Oct 2020 18:53:48 GMT",

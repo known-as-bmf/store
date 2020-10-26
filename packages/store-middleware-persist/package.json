@@ -1,6 +1,6 @@
 {
   "name": "@known-as-bmf/store-middleware-persist",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "author": "Julien Avert",
   "description": "Persistence middleware for @known-as-bmf/store.",
   "keywords": [
@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@known-as-bmf/eslint-config-bmf": "1.0.3",
-    "@known-as-bmf/store": "workspace:^3.0.2",
+    "@known-as-bmf/store": "workspace:^3.0.3",
     "@known-as-bmf/toolchain": "workspace:*",
     "@types/jest": "26.0.15",
     "@types/lodash": "4.14.162",
@@ -47,7 +47,7 @@
     "typescript": "4.0.3"
   },
   "peerDependencies": {
-    "@known-as-bmf/store": "workspace:^3.0.2"
+    "@known-as-bmf/store": "workspace:^3.0.3"
   },
   "dependencies": {
     "lodash": "4.17.20"

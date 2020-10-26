@@ -1,6 +1,13 @@
 # Change Log - @known-as-bmf/store-middleware-validate
 
-This log was last generated on Wed, 21 Oct 2020 18:53:48 GMT and should not be manually modified.
+This log was last generated on Mon, 26 Oct 2020 19:29:45 GMT and should not be manually modified.
+
+## 4.0.2
+Mon, 26 Oct 2020 19:29:45 GMT
+
+### Patches
+
+- bump deps
 
 ## 4.0.1
 Wed, 21 Oct 2020 18:53:48 GMT
