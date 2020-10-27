@@ -44,7 +44,7 @@
     "@types/lodash": "4.14.162",
     "eslint": "7.11.0",
     "tslib": "2.0.3",
-    "typescript": "4.0.3"
+    "typescript": "4.0.5"
   },
   "peerDependencies": {
     "@known-as-bmf/store": "workspace:^3.0.3"

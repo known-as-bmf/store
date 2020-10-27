@@ -50,7 +50,7 @@
     "react-dom": "17.0.1",
     "react-test-renderer": "17.0.1",
     "tslib": "2.0.3",
-    "typescript": "4.0.3"
+    "typescript": "4.0.5"
   },
   "peerDependencies": {
     "@known-as-bmf/store": "workspace:^3.0.3",
