@@ -36,6 +36,8 @@ jobs:
       - run: node common/scripts/install-run-rush.js check
       - run: node common/scripts/install-run-rush.js rebuild --verbose
       - run: node common/scripts/install-run-rush.js test:coverage --verbose
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
 
 env:
   CI: true
