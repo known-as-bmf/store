@@ -1,6 +1,6 @@
 {
   "name": "@known-as-bmf/store-middleware-validate",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "author": "Julien Avert",
   "description": "Validation middleware for @known-as-bmf/store.",
   "keywords": [
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@known-as-bmf/eslint-config-bmf": "1.0.4",
-    "@known-as-bmf/store": "workspace:^3.0.3",
+    "@known-as-bmf/store": "workspace:^3.0.4",
     "@known-as-bmf/toolchain": "workspace:*",
     "@types/jest": "26.0.15",
     "eslint": "7.12.1",
@@ -45,7 +45,7 @@
     "typescript": "4.0.5"
   },
   "peerDependencies": {
-    "@known-as-bmf/store": "workspace:^3.0.3"
+    "@known-as-bmf/store": "workspace:^3.0.4"
   },
   "publishConfig": {
     "access": "public"

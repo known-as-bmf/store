@@ -1,6 +1,13 @@
 # Change Log - @known-as-bmf/store-obs
 
-This log was last generated on Mon, 26 Oct 2020 19:29:45 GMT and should not be manually modified.
+This log was last generated on Fri, 30 Oct 2020 10:49:08 GMT and should not be manually modified.
+
+## 3.0.4
+Fri, 30 Oct 2020 10:49:08 GMT
+
+### Patches
+
+- bump deps
 
 ## 3.0.3
 Mon, 26 Oct 2020 19:29:45 GMT
