@@ -211,7 +211,7 @@ function swap<S>(store: Store<S>, mutationFn: (current: S) => S): void;
 function set<S>(store: Store<S>, newState: S): void;
 ```
 
-### subscribe / obs
+### subscribe
 
 ```ts
 /**
@@ -238,16 +238,6 @@ function subscribe<S, R>(
   callback: SubscriptionCallback<S>,
   selector: Selector<S, R>
 ): () => void;
-```
-
-```ts
-/**
- * Creates an observable from the store, emitting every time the store is updated.
- * Requires `rxjs >= 6.0` as a dependency to work.
- * @param store The store to observe.
- * @throws {TypeError} if the store is not a correct `Store` instance.
- */
-function obs<S>(store: Store<S>): Observable<StateChangedEvent<S>>;
 ```
 
 ```ts
