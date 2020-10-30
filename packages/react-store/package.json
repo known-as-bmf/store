@@ -36,7 +36,7 @@
     "doc": "api-extractor run --local --verbose"
   },
   "devDependencies": {
-    "@known-as-bmf/eslint-config-bmf": "1.0.3",
+    "@known-as-bmf/eslint-config-bmf": "1.0.4",
     "@known-as-bmf/store": "workspace:^3.0.3",
     "@known-as-bmf/toolchain": "workspace:*",
     "@testing-library/react": "11.1.0",
@@ -45,7 +45,7 @@
     "@types/react": "16.9.55",
     "@types/react-dom": "16.9.9",
     "@types/testing-library__react-hooks": "3.4.1",
-    "eslint": "7.11.0",
+    "eslint": "7.12.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-test-renderer": "17.0.1",
