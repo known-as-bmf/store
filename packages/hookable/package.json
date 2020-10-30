@@ -28,9 +28,11 @@
     "start": "",
     "build": "tscli build",
     "test": "tscli test",
+    "test:watch": "tscli test --watch",
     "test:coverage": "tscli test --coverage",
     "lint": "tscli lint",
-    "doc": "api-extractor run --local --verbose"
+    "doc": "api-extractor run --local --verbose",
+    "prepublishOnly": "tscli build"
   },
   "devDependencies": {
     "@known-as-bmf/eslint-config-bmf": "1.0.4",
