@@ -37,7 +37,7 @@ importers:
       typescript: 4.0.5
     specifiers:
       '@known-as-bmf/eslint-config-bmf': 1.0.4
-      '@known-as-bmf/store': 'workspace:^3.0.3'
+      '@known-as-bmf/store': 'workspace:^3.0.4'
       '@known-as-bmf/toolchain': 'workspace:*'
       '@testing-library/react': 11.1.0
       '@testing-library/react-hooks': 3.4.2
@@ -64,7 +64,7 @@ importers:
       typescript: 4.0.5
     specifiers:
       '@known-as-bmf/eslint-config-bmf': 1.0.4
-      '@known-as-bmf/hookable': 'workspace:^3.0.4'
+      '@known-as-bmf/hookable': 'workspace:^3.0.5'
       '@known-as-bmf/toolchain': 'workspace:*'
       '@types/jest': 26.0.15
       eslint: 7.12.1
@@ -85,7 +85,7 @@ importers:
       typescript: 4.0.5
     specifiers:
       '@known-as-bmf/eslint-config-bmf': 1.0.4
-      '@known-as-bmf/store': 'workspace:^3.0.3'
+      '@known-as-bmf/store': 'workspace:^3.0.4'
       '@known-as-bmf/toolchain': 'workspace:*'
       '@types/jest': 26.0.15
       '@types/lodash': 4.14.164
@@ -104,7 +104,7 @@ importers:
       typescript: 4.0.5
     specifiers:
       '@known-as-bmf/eslint-config-bmf': 1.0.4
-      '@known-as-bmf/store': 'workspace:^3.0.3'
+      '@known-as-bmf/store': 'workspace:^3.0.4'
       '@known-as-bmf/toolchain': 'workspace:*'
       '@types/jest': 26.0.15
       eslint: 7.12.1
@@ -121,7 +121,7 @@ importers:
       typescript: 4.0.5
     specifiers:
       '@known-as-bmf/eslint-config-bmf': 1.0.4
-      '@known-as-bmf/store': 'workspace:^3.0.3'
+      '@known-as-bmf/store': 'workspace:^3.0.4'
       '@known-as-bmf/toolchain': 'workspace:*'
       '@types/jest': 26.0.15
       eslint: 7.12.1
@@ -139,7 +139,7 @@ importers:
       typescript: 4.0.5
     specifiers:
       '@known-as-bmf/eslint-config-bmf': 1.0.4
-      '@known-as-bmf/store': 'workspace:^3.0.3'
+      '@known-as-bmf/store': 'workspace:^3.0.4'
       '@known-as-bmf/toolchain': 'workspace:*'
       '@types/jest': 26.0.15
       eslint: 7.12.1
@@ -1124,7 +1124,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-iIgQNzCm0v7QMhhe4Jjn9uRh+I6GoPmt03CbEtwx3ao8/EfoQcmgtqH4vQ5Db/lxiIGaWDv6nwvunuh0RyX0+A==
-  /@types/babel__core/7.1.10:
+  /@types/babel__core/7.1.11:
     dependencies:
       '@babel/parser': 7.12.3
       '@babel/types': 7.12.1
@@ -1133,7 +1133,7 @@ packages:
       '@types/babel__traverse': 7.0.15
     dev: true
     resolution:
-      integrity: sha512-x8OM8XzITIMyiwl5Vmo2B1cR1S1Ipkyv4mdlbJjMa1lmuKvKY9FrBbEANIaMlnWn5Rf7uO+rC/VgYabNkE17Hw==
+      integrity: sha512-E5nSOzrjnvhURYnbOR2dClTqcyhPbPvtEwLHf7JJADKedPbcZsoJVfP+I2vBNfBjz4bnZIuhL/tNmRi5nJ7Jlw==
   /@types/babel__generator/7.6.2:
     dependencies:
       '@babel/types': 7.12.1
@@ -1707,16 +1707,16 @@ packages:
     dev: true
     resolution:
       integrity: sha1-tG6JCTSpWR8tL2+G1+ap8bP+dqg=
-  /aws4/1.10.1:
+  /aws4/1.11.0:
     dev: true
     resolution:
-      integrity: sha512-zg7Hz2k5lI8kb7U32998pRRFin7zJlkfezGJjUc2heaD4Pw2wObakCDVzkKztTm/Ln7eiVvYsjqak0Ed4LkMDA==
+      integrity: sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
   /babel-jest/26.6.1_@babel+core@7.12.3:
     dependencies:
       '@babel/core': 7.12.3
       '@jest/transform': 26.6.1
       '@jest/types': 26.6.1
-      '@types/babel__core': 7.1.10
+      '@types/babel__core': 7.1.11
       babel-plugin-istanbul: 6.0.0
       babel-preset-jest: 26.5.0_@babel+core@7.12.3
       chalk: 4.1.0
@@ -1745,7 +1745,7 @@ packages:
     dependencies:
       '@babel/template': 7.10.4
       '@babel/types': 7.12.1
-      '@types/babel__core': 7.1.10
+      '@types/babel__core': 7.1.11
       '@types/babel__traverse': 7.0.15
     dev: true
     engines:
@@ -1895,6 +1895,13 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-AKcdTnFSWATd5/GCPRxr2ChwIJ85CeyrEyjRHlKxQ56d4XJMGym0uAiKn0xbLOGOl3+yRpOTi484dVCEc5AUzQ==
+  /call-bind/1.0.0:
+    dependencies:
+      function-bind: 1.1.1
+      get-intrinsic: 1.0.1
+    dev: true
+    resolution:
+      integrity: sha512-AEXsYIyyDY3MCzbwdhzG3Jx1R0J2wetQyUynn6dYHAO+bg8l1k7jwZtRv4ryryFs7EP+NDlikJlVe59jr0cM2w==
   /callsites/3.1.0:
     dev: true
     engines:
@@ -2370,7 +2377,7 @@ packages:
       is-regex: 1.1.1
       object-inspect: 1.8.0
       object-keys: 1.1.1
-      object.assign: 4.1.1
+      object.assign: 4.1.2
       string.prototype.trimend: 1.0.2
       string.prototype.trimstart: 1.0.2
     dev: true
@@ -2389,7 +2396,7 @@ packages:
       is-regex: 1.1.1
       object-inspect: 1.8.0
       object-keys: 1.1.1
-      object.assign: 4.1.1
+      object.assign: 4.1.2
       string.prototype.trimend: 1.0.2
       string.prototype.trimstart: 1.0.2
     dev: true
@@ -2916,6 +2923,14 @@ packages:
       node: 6.* || 8.* || >= 10.*
     resolution:
       integrity: sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==
+  /get-intrinsic/1.0.1:
+    dependencies:
+      function-bind: 1.1.1
+      has: 1.0.3
+      has-symbols: 1.0.1
+    dev: true
+    resolution:
+      integrity: sha512-ZnWP+AmS1VUaLgTRy47+zKtjTxz+0xMpx3I52i+aalBK1QP19ggLF3Db89KJX7kjfOfP2eoa01qc++GwPgufPg==
   /get-package-type/0.1.0:
     dev: true
     engines:
@@ -4168,7 +4183,7 @@ packages:
   /jsx-ast-utils/2.4.1:
     dependencies:
       array-includes: 3.1.1
-      object.assign: 4.1.1
+      object.assign: 4.1.2
     dev: true
     engines:
       node: '>=4.0'
@@ -4583,17 +4598,17 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-95xEk68MU3e1n+OdOV5BBC3QRbs=
-  /object.assign/4.1.1:
+  /object.assign/4.1.2:
     dependencies:
+      call-bind: 1.0.0
       define-properties: 1.1.3
-      es-abstract: 1.18.0-next.1
       has-symbols: 1.0.1
       object-keys: 1.1.1
     dev: true
     engines:
       node: '>= 0.4'
     resolution:
-      integrity: sha512-VT/cxmx5yaoHSOTSyrCygIDFco+RsibY2NM0a4RdEeY/4KgqezwFtK1yr3U67xYhqJSlASm2pKhLVzPj2lr4bA==
+      integrity: sha512-ixT2L5THXsApyiUPYKmW+2EHpXXe5Ii3M+f4e+aJFAHao5amFRW6J0OO6c/LU8Be47utCx2GL89hxGB6XSmKuQ==
   /object.entries/1.1.2:
     dependencies:
       define-properties: 1.1.3
@@ -5105,7 +5120,7 @@ packages:
   /request/2.88.2:
     dependencies:
       aws-sign2: 0.7.0
-      aws4: 1.10.1
+      aws4: 1.11.0
       caseless: 0.12.0
       combined-stream: 1.0.8
       extend: 3.0.2
