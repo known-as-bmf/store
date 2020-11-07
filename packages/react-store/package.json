@@ -38,7 +38,7 @@
     "prepublishOnly": "tscli build"
   },
   "devDependencies": {
-    "@known-as-bmf/eslint-config-bmf": "1.0.4",
+    "@known-as-bmf/eslint-config-bmf": "1.0.5",
     "@known-as-bmf/store": "workspace:^3.0.4",
     "@known-as-bmf/toolchain": "workspace:*",
     "@testing-library/react": "11.1.1",
