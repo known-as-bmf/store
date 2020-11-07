@@ -1,6 +1,6 @@
 {
   "name": "@known-as-bmf/hookable",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "author": "Julien Avert",
   "description": "Function hooking utility.",
   "keywords": [

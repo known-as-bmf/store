@@ -2,6 +2,26 @@
   "name": "@known-as-bmf/store",
   "entries": [
     {
+      "version": "3.0.5",
+      "tag": "@known-as-bmf/store_v3.0.5",
+      "date": "Sat, 07 Nov 2020 18:11:14 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "bump deps"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@known-as-bmf/hookable\" from `^3.0.5` to `^3.0.6`"
+          },
+          {
+            "comment": "Updating dependency \"@known-as-bmf/hookable\" from `^3.0.5` to `^3.0.6`"
+          }
+        ]
+      }
+    },
+    {
       "version": "3.0.4",
       "tag": "@known-as-bmf/store_v3.0.4",
       "date": "Fri, 30 Oct 2020 10:49:09 GMT",
