@@ -2,6 +2,18 @@
   "name": "@known-as-bmf/hookable",
   "entries": [
     {
+      "version": "3.0.6",
+      "tag": "@known-as-bmf/hookable_v3.0.6",
+      "date": "Sat, 07 Nov 2020 18:11:14 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "bump deps"
+          }
+        ]
+      }
+    },
+    {
       "version": "3.0.5",
       "tag": "@known-as-bmf/hookable_v3.0.5",
       "date": "Fri, 30 Oct 2020 10:49:08 GMT",
