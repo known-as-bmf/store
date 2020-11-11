@@ -23,7 +23,7 @@ importers:
       '@known-as-bmf/eslint-config-bmf': 1.0.5_eslint@7.13.0+typescript@4.0.5
       '@known-as-bmf/store': 'link:../store'
       '@known-as-bmf/toolchain': 'link:../../tools/toolchain'
-      '@testing-library/react': 11.1.1_react-dom@17.0.1+react@17.0.1
+      '@testing-library/react': 11.1.2_react-dom@17.0.1+react@17.0.1
       '@testing-library/react-hooks': 3.4.2_59c10a9f92837cab37888c15f7d5c44c
       '@types/jest': 26.0.15
       '@types/react': 16.9.56
@@ -39,7 +39,7 @@ importers:
       '@known-as-bmf/eslint-config-bmf': 1.0.5
       '@known-as-bmf/store': 'workspace:^3.0.5'
       '@known-as-bmf/toolchain': 'workspace:*'
-      '@testing-library/react': 11.1.1
+      '@testing-library/react': 11.1.2
       '@testing-library/react-hooks': 3.4.2
       '@types/jest': 26.0.15
       '@types/react': 16.9.56
@@ -149,13 +149,13 @@ importers:
   ../../tools/toolchain:
     devDependencies:
       '@known-as-bmf/tscli': 0.1.7_typescript@4.0.5
-      '@microsoft/api-extractor': 7.11.2
+      '@microsoft/api-extractor': 7.11.4
       '@types/jest': 26.0.15
       jest-standard-reporter: 2.0.0
       typescript: 4.0.5
     specifiers:
       '@known-as-bmf/tscli': 0.1.7
-      '@microsoft/api-extractor': 7.11.2
+      '@microsoft/api-extractor': 7.11.4
       '@types/jest': 26.0.15
       jest-standard-reporter: 2.0.0
       typescript: 4.0.5
@@ -182,7 +182,7 @@ packages:
       gensync: 1.0.0-beta.2
       json5: 2.1.3
       lodash: 4.17.20
-      resolve: 1.18.1
+      resolve: 1.19.0
       semver: 5.7.1
       source-map: 0.5.7
     dev: true
@@ -782,20 +782,20 @@ packages:
       typescript: '*'
     resolution:
       integrity: sha512-wLUObb5z+cM7p2iOlt48aJi3hcvxJvhZTnV6YdHyfyCAmqWkFPsevcRS9tjTbT90NoZufC6mAYcL4rwl2njcQQ==
-  /@microsoft/api-extractor-model/7.10.8:
+  /@microsoft/api-extractor-model/7.10.10:
     dependencies:
       '@microsoft/tsdoc': 0.12.19
-      '@rushstack/node-core-library': 3.34.7
+      '@rushstack/node-core-library': 3.35.1
     dev: true
     resolution:
-      integrity: sha512-9TfiCTPnkUeLaYywZeg9rYbVPX9Tj6AAkO6ThnjSE0tTPLjMcL3RiHkqn0BJ4+aGcl56APwo32zj5+kG+NqxYA==
-  /@microsoft/api-extractor/7.11.2:
+      integrity: sha512-Sy3kjAQARyW54YneYdf1c7vKZAQbFSZA1Px9TekkcKCOGER8h5trplTSCQWwTgWOKarQaNNSnlkHII0CNMoMjA==
+  /@microsoft/api-extractor/7.11.4:
     dependencies:
-      '@microsoft/api-extractor-model': 7.10.8
+      '@microsoft/api-extractor-model': 7.10.10
       '@microsoft/tsdoc': 0.12.19
-      '@rushstack/node-core-library': 3.34.7
-      '@rushstack/rig-package': 0.2.7
-      '@rushstack/ts-command-line': 4.7.6
+      '@rushstack/node-core-library': 3.35.1
+      '@rushstack/rig-package': 0.2.8
+      '@rushstack/ts-command-line': 4.7.7
       colors: 1.2.5
       lodash: 4.17.20
       resolve: 1.17.0
@@ -805,7 +805,7 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-iZPv22j9K02cbwIDblOgF1MxZG+KWovp3CQpWCD6UC/+YYO4DfLxX5uZYVNzfgT4vU8fN0rugJmGm85rHX6Ouw==
+      integrity: sha512-BRAB6IuwWgK7toDBgiaSkYb04dp3xbTOXdDvWUqcILvrzPF8WQHGPWFmmr5OLg2WknjiIE3TEKF9turfZcgcjw==
   /@microsoft/tsdoc-config/0.13.6:
     dependencies:
       '@microsoft/tsdoc': 0.12.21
@@ -924,7 +924,7 @@ packages:
       glob: 7.1.6
       is-reference: 1.2.1
       magic-string: 0.25.7
-      resolve: 1.18.1
+      resolve: 1.19.0
       rollup: 2.33.1
     dev: true
     engines:
@@ -949,7 +949,7 @@ packages:
       builtin-modules: 3.1.0
       deepmerge: 4.2.2
       is-module: 1.0.0
-      resolve: 1.18.1
+      resolve: 1.19.0
       rollup: 2.33.1
     dev: true
     engines:
@@ -961,7 +961,7 @@ packages:
   /@rollup/plugin-typescript/6.1.0_66c0221b3cde985c2512091a2e846a04:
     dependencies:
       '@rollup/pluginutils': 3.1.0_rollup@2.33.1
-      resolve: 1.18.1
+      resolve: 1.19.0
       rollup: 2.33.1
       tslib: 2.0.3
       typescript: 4.0.5
@@ -1039,7 +1039,7 @@ packages:
       eslint: ^6.0.0 || ^7.0.0
     resolution:
       integrity: sha512-gLvv4Yysv/VSqoa97x8b1dJvQS8v3qUYRU2NgKOPQjesE6La/AF/FCUenq5VcXiCbvkiW3hQQKHCnO0BXEyolw==
-  /@rushstack/node-core-library/3.34.7:
+  /@rushstack/node-core-library/3.35.1:
     dependencies:
       '@types/node': 10.17.13
       colors: 1.2.5
@@ -1052,20 +1052,20 @@ packages:
       z-schema: 3.18.4
     dev: true
     resolution:
-      integrity: sha512-7FwJ0jmZsh7bDIZ1IqDNphY9Kc6aAi1D2K8jiq+da4flMyL84HNeq2KxvwFLzjLwu3eMr88X+oBpgxCTD5Y57Q==
-  /@rushstack/rig-package/0.2.7:
+      integrity: sha512-ZwnXp2loZyVUgrZ+fEKKF/EHl0ikcy6SCsd34ewYXoEAs0XWIy2VS9bemrfaFtd2VzJ/G/ZbP3xHkqRnUPKJ4Q==
+  /@rushstack/rig-package/0.2.8:
     dependencies:
       '@types/node': 10.17.13
       resolve: 1.17.0
       strip-json-comments: 3.1.1
     dev: true
     resolution:
-      integrity: sha512-hI1L0IIzCHqH/uW64mKqEQ0/MANA/IklVId3jGpj1kt9RJcBdeNUIlzDtHl437LZRAuEA8CyotRHzG6YDgWlTw==
+      integrity: sha512-Ltjeg1a5Sx7XTW9oBxmcfhHseBLnH7I/8d6tAtjx5s0r7F6WmNVJdxVmt86qNfXcFRsiGNrzLqjMwlcX3GyldQ==
   /@rushstack/tree-pattern/0.2.1:
     dev: true
     resolution:
       integrity: sha512-ZRPQdV0LxUY/HRIvVKNz3Sb/qbklSthL2pY0qkNoycXKcXbCgXEP3TxL+i1/tW9g1jqft4o+pl9wx12Q6Uc0Xw==
-  /@rushstack/ts-command-line/4.7.6:
+  /@rushstack/ts-command-line/4.7.7:
     dependencies:
       '@types/argparse': 1.0.38
       argparse: 1.0.10
@@ -1073,7 +1073,7 @@ packages:
       string-argv: 0.3.1
     dev: true
     resolution:
-      integrity: sha512-falJVNfpJtsL3gJaY77JXXycfzhzB9VkKhqEfjRWD69/f6ezMUorPR6Nc90MnIaWgePTcdTJPZibxOQrNpu1Uw==
+      integrity: sha512-COSDys0WTVCORKam2hsTL32As4fHAf1RqC6FKS98hgR0Z90nh1JX8fGNkvSdxaZ6dOuNTJj3txh+SpWoHJoZJA==
   /@sinonjs/commons/1.8.1:
     dependencies:
       type-detect: 4.0.8
@@ -1086,7 +1086,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-MZPUxrmFubI36XS1DI3qmI0YdN1gks62JtFZvxR67ljjSNCeK6U08Zx4msEWOXuofgqUt6zPHSi1H9fbjR/NRA==
-  /@testing-library/dom/7.26.5:
+  /@testing-library/dom/7.26.6:
     dependencies:
       '@babel/code-frame': 7.10.4
       '@babel/runtime': 7.12.5
@@ -1100,7 +1100,7 @@ packages:
     engines:
       node: '>=10'
     resolution:
-      integrity: sha512-2v/fv0s4keQjJIcD4bjfJMFtvxz5icartxUWdIZVNJR539WD9oxVrvIAPw+3Ydg4RLgxt0rvQx3L9cAjCci0Kg==
+      integrity: sha512-/poL7WMpolcGFOHMcxfcFkf1u38DcBUjk3YwNYpBs/MdJ546lg0YdvP2Lq3ujuQzAZxgs8vVvadj3MBnZsBjjA==
   /@testing-library/react-hooks/3.4.2_59c10a9f92837cab37888c15f7d5c44c:
     dependencies:
       '@babel/runtime': 7.12.5
@@ -1113,10 +1113,10 @@ packages:
       react-test-renderer: '>=16.9.0'
     resolution:
       integrity: sha512-RfPG0ckOzUIVeIqlOc1YztKgFW+ON8Y5xaSPbiBkfj9nMkkiLhLeBXT5icfPX65oJV/zCZu4z8EVnUc6GY9C5A==
-  /@testing-library/react/11.1.1_react-dom@17.0.1+react@17.0.1:
+  /@testing-library/react/11.1.2_react-dom@17.0.1+react@17.0.1:
     dependencies:
       '@babel/runtime': 7.12.5
-      '@testing-library/dom': 7.26.5
+      '@testing-library/dom': 7.26.6
       react: 17.0.1
       react-dom: 17.0.1_react@17.0.1
     dev: true
@@ -1126,7 +1126,7 @@ packages:
       react: '*'
       react-dom: '*'
     resolution:
-      integrity: sha512-DT/P2opE9o4NWCd/oIL73b6VF/Xk9AY8iYSstKfz9cXw0XYPQ5IhA/cuYfoN9nU+mAynW8DpAVfEWdM6e7zF6g==
+      integrity: sha512-foL0/Mo68M51DdgFwEsO2SDEkUpocuEYidOTcJACGEcoakZDINuERYwVdd6T5e3pPE+BZyGwwURaXcrX1v9RbQ==
   /@types/argparse/1.0.38:
     dev: true
     resolution:
@@ -2486,7 +2486,7 @@ packages:
       object.fromentries: 2.0.2
       object.values: 1.1.1
       prop-types: 15.7.2
-      resolve: 1.18.1
+      resolve: 1.19.0
       string.prototype.matchall: 4.0.2
     dev: true
     engines:
@@ -3910,7 +3910,7 @@ packages:
       jest-pnp-resolver: 1.2.2_jest-resolve@26.6.2
       jest-util: 26.6.2
       read-pkg-up: 7.0.1
-      resolve: 1.18.1
+      resolve: 1.19.0
       slash: 3.0.0
     dev: true
     engines:
@@ -4542,7 +4542,7 @@ packages:
   /normalize-package-data/2.5.0:
     dependencies:
       hosted-git-info: 2.8.8
-      resolve: 1.18.1
+      resolve: 1.19.0
       semver: 5.7.1
       validate-npm-package-license: 3.0.4
     dev: true
@@ -5214,13 +5214,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-ic+7JYiV8Vi2yzQGFWOkiZD5Z9z7O2Zhm9XMaTxdJExKasieFCr+yXZ/WmXsckHiKl12ar0y6XiXDx3m4RHn1w==
-  /resolve/1.18.1:
+  /resolve/1.19.0:
     dependencies:
       is-core-module: 2.1.0
       path-parse: 1.0.6
     dev: true
     resolution:
-      integrity: sha512-lDfCPaMKfOJXjy0dPayzPdF1phampNWr3qFCjAu+rw/qbQmr5jWH5xN2hwh9QKfw9E5v4hwV7A+jrCmL8yjjqA==
+      integrity: sha512-rArEXAgsBG4UgRGcynxWIWKFvh/XZCcS8UJdHhwy91zwAvCZIbcs+vAbflgBnNjYMs/i/i+/Ux6IZhML1yPvxg==
   /restore-cursor/2.0.0:
     dependencies:
       onetime: 2.0.1
