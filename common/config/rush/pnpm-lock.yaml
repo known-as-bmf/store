@@ -1140,7 +1140,7 @@ packages:
       '@babel/parser': 7.12.5
       '@babel/types': 7.12.6
       '@types/babel__generator': 7.6.2
-      '@types/babel__template': 7.0.3
+      '@types/babel__template': 7.4.0
       '@types/babel__traverse': 7.0.15
     dev: true
     resolution:
@@ -1151,13 +1151,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-MdSJnBjl+bdwkLskZ3NGFp9YcXGx5ggLpQQPqtgakVhsWK0hTtNYhjpZLlWQTviGTvF8at+Bvli3jV7faPdgeQ==
-  /@types/babel__template/7.0.3:
+  /@types/babel__template/7.4.0:
     dependencies:
       '@babel/parser': 7.12.5
       '@babel/types': 7.12.6
     dev: true
     resolution:
-      integrity: sha512-uCoznIPDmnickEi6D0v11SBpW0OuVqHJCa7syXqQHy5uktSCreIlt0iglsCnmvz8yCb38hGcWeseA8cWJSwv5Q==
+      integrity: sha512-NTPErx4/FiPCGScH7foPyr+/1Dkzkni+rHiYHHoTjvwou7AQzJkNeD60A9CXRy+ZEN2B1bggmkTMCDb+Mv5k+A==
   /@types/babel__traverse/7.0.15:
     dependencies:
       '@babel/types': 7.12.6
@@ -1266,7 +1266,7 @@ packages:
   /@types/react/16.9.56:
     dependencies:
       '@types/prop-types': 15.7.3
-      csstype: 3.0.4
+      csstype: 3.0.5
     dev: true
     resolution:
       integrity: sha512-gIkl4J44G/qxbuC6r2Xh+D3CGZpJ+NdWTItAPmZbR5mUS+JQ8Zvzpl0ea5qT/ZT3ZNTUcDKUVqV3xBE8wv/DyQ==
@@ -2155,10 +2155,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-AZL67abkUzIuvcHqk7c09cezpGNcxUxU4Ioi/05xHk4DQeTkWmGYftIE6ctU6AEt+Gn4n1lDStOtj7FKycP71A==
-  /csstype/3.0.4:
+  /csstype/3.0.5:
     dev: true
     resolution:
-      integrity: sha512-xc8DUsCLmjvCfoD7LTGE0ou2MIWLx0K9RCZwSHMOdynqRsP4MtUcLeqh1HcQ2dInwDTqn+3CE0/FZh1et+p4jA==
+      integrity: sha512-uVDi8LpBUKQj6sdxNaTetL6FpeCqTjOvAQuQUa/qAqq8oOd4ivkbhgnqayl0dnPal8Tb/yB1tF+gOvCBiicaiQ==
   /dashdash/1.14.1:
     dependencies:
       assert-plus: 1.0.0
@@ -3836,7 +3836,7 @@ packages:
       chalk: 2.4.2
       micromatch: 3.1.10
       slash: 2.0.0
-      stack-utils: 1.0.2
+      stack-utils: 1.0.3
     dev: true
     engines:
       node: '>= 6'
@@ -3852,7 +3852,7 @@ packages:
       micromatch: 4.0.2
       pretty-format: 26.6.2
       slash: 3.0.0
-      stack-utils: 2.0.2
+      stack-utils: 2.0.3
     dev: true
     engines:
       node: '>= 10.14.2'
@@ -5612,20 +5612,22 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-HXXqVUq7+pcKeLqqZj6mHFUMvXtOJt1uoUx09pFW6011inTMxqI8BA8PM95myrIyyKwdnzjdFjLiE6KBPVtJIg==
-  /stack-utils/1.0.2:
+  /stack-utils/1.0.3:
+    dependencies:
+      escape-string-regexp: 2.0.0
     dev: true
     engines:
-      node: '>=0.10.0'
+      node: '>=8'
     resolution:
-      integrity: sha512-MTX+MeG5U994cazkjd/9KNAapsHnibjMLnfXodlkXw76JEea0UiNzrqidzo1emMwk7w5Qhc9jd4Bn9TBb1MFwA==
-  /stack-utils/2.0.2:
+      integrity: sha512-WldO+YmqhEpjp23eHZRhOT1NQF51STsbxZ+/AdpFD+EhheFxAe5d0WoK4DQVJkSHacPrJJX3OqRAl9CgHf78pg==
+  /stack-utils/2.0.3:
     dependencies:
       escape-string-regexp: 2.0.0
     dev: true
     engines:
       node: '>=10'
     resolution:
-      integrity: sha512-0H7QK2ECz3fyZMzQ8rH0j2ykpfbnd20BFtfg/SqVC2+sCTtcw0aDTGB7dk+de4U4uUeuz6nOtJcrkFFLG1B0Rg==
+      integrity: sha512-gL//fkxfWUsIlFL2Tl42Cl6+HFALEaB1FU76I/Fy+oZjRreP7OPMXFlGbxM7NQsI0ZpUfw76sHnv0WNYuTb7Iw==
   /static-extend/0.1.2:
     dependencies:
       define-property: 0.2.5
