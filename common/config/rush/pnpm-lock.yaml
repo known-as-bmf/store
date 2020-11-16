@@ -5287,7 +5287,7 @@ packages:
       jest-worker: 26.6.2
       rollup: 2.33.1
       serialize-javascript: 4.0.0
-      terser: 5.3.8
+      terser: 5.4.0
     dev: true
     peerDependencies:
       rollup: ^2.0.0
@@ -5813,7 +5813,7 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-un0FmiRUQNr5PJqy9kP7c40F5BOfpGlYTrxonDChEZB7pzZxRNp/bt+ymiy9/npwXya9KH99nJ/GXFIiUkYGFQ==
-  /terser/5.3.8:
+  /terser/5.4.0:
     dependencies:
       commander: 2.20.3
       source-map: 0.7.3
@@ -5823,7 +5823,7 @@ packages:
       node: '>=10'
     hasBin: true
     resolution:
-      integrity: sha512-zVotuHoIfnYjtlurOouTazciEfL7V38QMAOhGqpXDEg6yT13cF4+fEP9b0rrCEQTn+tT46uxgFsTZzhygk+CzQ==
+      integrity: sha512-3dZunFLbCJis9TAF2VnX+VrQLctRUmt1p3W2kCsJuZE4ZgWqh//+1MZ62EanewrqKoUf4zIaDGZAvml4UDc0OQ==
   /test-exclude/6.0.0:
     dependencies:
       '@istanbuljs/schema': 0.1.2
