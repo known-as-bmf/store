@@ -44,9 +44,9 @@
     "@known-as-bmf/store": "workspace:^3.0.5",
     "@known-as-bmf/toolchain": "workspace:*",
     "@types/jest": "26.0.15",
-    "eslint": "7.13.0",
+    "eslint": "7.14.0",
     "tslib": "2.0.3",
-    "typescript": "4.0.5"
+    "typescript": "4.1.2"
   },
   "peerDependencies": {
     "@known-as-bmf/store": "workspace:^3.0.5"

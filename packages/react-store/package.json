@@ -41,18 +41,18 @@
     "@known-as-bmf/eslint-config-bmf": "1.0.5",
     "@known-as-bmf/store": "workspace:^3.0.5",
     "@known-as-bmf/toolchain": "workspace:*",
-    "@testing-library/react": "11.2.1",
+    "@testing-library/react": "11.2.2",
     "@testing-library/react-hooks": "3.4.2",
     "@types/jest": "26.0.15",
-    "@types/react": "16.9.56",
-    "@types/react-dom": "16.9.9",
+    "@types/react": "17.0.0",
+    "@types/react-dom": "17.0.0",
     "@types/testing-library__react-hooks": "3.4.1",
-    "eslint": "7.13.0",
+    "eslint": "7.14.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-test-renderer": "17.0.1",
     "tslib": "2.0.3",
-    "typescript": "4.0.5"
+    "typescript": "4.1.2"
   },
   "peerDependencies": {
     "@known-as-bmf/store": "workspace:^3.0.5",
