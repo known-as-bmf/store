@@ -175,7 +175,7 @@ packages:
       '@babel/helpers': 7.12.5
       '@babel/parser': 7.12.7
       '@babel/template': 7.12.7
-      '@babel/traverse': 7.12.7
+      '@babel/traverse': 7.12.8
       '@babel/types': 7.12.7
       convert-source-map: 1.7.0
       debug: 4.3.1
@@ -232,7 +232,7 @@ packages:
       '@babel/helper-split-export-declaration': 7.11.0
       '@babel/helper-validator-identifier': 7.10.4
       '@babel/template': 7.12.7
-      '@babel/traverse': 7.12.7
+      '@babel/traverse': 7.12.8
       '@babel/types': 7.12.7
       lodash: 4.17.20
     dev: true
@@ -252,7 +252,7 @@ packages:
     dependencies:
       '@babel/helper-member-expression-to-functions': 7.12.7
       '@babel/helper-optimise-call-expression': 7.12.7
-      '@babel/traverse': 7.12.7
+      '@babel/traverse': 7.12.8
       '@babel/types': 7.12.7
     dev: true
     resolution:
@@ -276,7 +276,7 @@ packages:
   /@babel/helpers/7.12.5:
     dependencies:
       '@babel/template': 7.12.7
-      '@babel/traverse': 7.12.7
+      '@babel/traverse': 7.12.8
       '@babel/types': 7.12.7
     dev: true
     resolution:
@@ -425,7 +425,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-GkDzmHS6GV7ZeXfJZ0tLRBhZcMcY0/Lnb+eEbXDBfCAcZCjrZKe6p3J4we/D24O9Y8enxWAg1cWwof59yLh2ow==
-  /@babel/traverse/7.12.7:
+  /@babel/traverse/7.12.8:
     dependencies:
       '@babel/code-frame': 7.10.4
       '@babel/generator': 7.12.5
@@ -438,7 +438,7 @@ packages:
       lodash: 4.17.20
     dev: true
     resolution:
-      integrity: sha512-nMWaqsQEeSvMNypswUDzjqQ+0rR6pqCtoQpsqGJC4/Khm9cISwPTSpai57F6/jDaOoEGz8yE/WxcO3PV6tKSmQ==
+      integrity: sha512-EIRQXPTwFEGRZyu6gXbjfpNORN1oZvwuzJbxcXjAgWV0iqXYDszN1Hx3FVm6YgZfu1ZQbCVAk3l+nIw95Xll9Q==
   /@babel/types/7.12.7:
     dependencies:
       '@babel/helper-validator-identifier': 7.10.4
@@ -3811,7 +3811,7 @@ packages:
       integrity: sha512-easWIJXIw71B2RdR8kgqpjQrbMRWQBgiBwXYEhtGUTaX+doCjBheluShdDMeR8IMfJiTqH4+zfhtg29apJf/8w==
   /jest-jasmine2/26.6.3:
     dependencies:
-      '@babel/traverse': 7.12.7
+      '@babel/traverse': 7.12.8
       '@jest/environment': 26.6.2
       '@jest/source-map': 26.6.2
       '@jest/test-result': 26.6.2
