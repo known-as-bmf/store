@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@known-as-bmf/hookable": "workspace:^3.0.6",
-    "immer": "8.0.0"
+    "immer": "8.0.1"
   },
   "publishConfig": {
     "access": "public"
