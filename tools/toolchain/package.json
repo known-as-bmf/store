@@ -8,8 +8,8 @@
   },
   "devDependencies": {
     "@known-as-bmf/tscli": "0.1.7",
-    "@microsoft/api-extractor": "7.12.1",
-    "@types/jest": "26.0.19",
+    "@microsoft/api-extractor": "7.13.0",
+    "@types/jest": "26.0.20",
     "jest-standard-reporter": "2.0.0",
     "typescript": "4.1.3"
   },
