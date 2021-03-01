@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@known-as-bmf/react-store",
+      "comment": "bump deps",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@known-as-bmf/react-store",
+  "email": "bmf.geekinside@gmail.com"
+}
