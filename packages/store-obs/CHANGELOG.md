@@ -1,6 +1,13 @@
 # Change Log - @known-as-bmf/store-obs
 
-This log was last generated on Thu, 21 Jan 2021 10:23:51 GMT and should not be manually modified.
+This log was last generated on Mon, 01 Mar 2021 13:22:50 GMT and should not be manually modified.
+
+## 3.0.7
+Mon, 01 Mar 2021 13:22:50 GMT
+
+### Patches
+
+- bump deps
 
 ## 3.0.6
 Thu, 21 Jan 2021 10:23:51 GMT
